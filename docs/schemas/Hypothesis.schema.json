@@ -1,0 +1,180 @@
+{
+  "$defs": {
+    "Check": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "passed": {
+          "title": "Passed",
+          "type": "boolean"
+        },
+        "result": {
+          "title": "Result",
+          "type": "string"
+        },
+        "observed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Observed"
+        }
+      },
+      "required": [
+        "name",
+        "passed",
+        "result"
+      ],
+      "title": "Check",
+      "type": "object"
+    },
+    "Evidence": {
+      "properties": {
+        "signal": {
+          "title": "Signal",
+          "type": "string"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        },
+        "strength": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Strength",
+          "type": "number"
+        }
+      },
+      "required": [
+        "signal",
+        "detail",
+        "strength"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "hypothesis_id": {
+      "title": "Hypothesis Id",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "field_mapping",
+        "entity_grain",
+        "record_match"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "source_field": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Field"
+    },
+    "left_record": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Left Record"
+    },
+    "right_record": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Right Record"
+    },
+    "target": {
+      "title": "Target",
+      "type": "string"
+    },
+    "score": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Score",
+      "type": "number"
+    },
+    "disposition": {
+      "enum": [
+        "accepted",
+        "review",
+        "rejected"
+      ],
+      "title": "Disposition",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "checks": {
+      "items": {
+        "$ref": "#/$defs/Check"
+      },
+      "title": "Checks",
+      "type": "array"
+    },
+    "model": {
+      "default": "deterministic",
+      "enum": [
+        "deterministic",
+        "ml"
+      ],
+      "title": "Model",
+      "type": "string"
+    }
+  },
+  "required": [
+    "hypothesis_id",
+    "kind",
+    "source_id",
+    "target",
+    "score",
+    "disposition",
+    "evidence",
+    "checks"
+  ],
+  "title": "Hypothesis",
+  "type": "object"
+}

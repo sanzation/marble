@@ -1,0 +1,86 @@
+{
+  "$defs": {
+    "SourceRecord": {
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "record_key": {
+          "title": "Record Key",
+          "type": "string"
+        },
+        "row_number": {
+          "title": "Row Number",
+          "type": "integer"
+        },
+        "content_hash": {
+          "title": "Content Hash",
+          "type": "string"
+        },
+        "values": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Values",
+          "type": "object"
+        }
+      },
+      "required": [
+        "source_id",
+        "record_key",
+        "row_number",
+        "content_hash",
+        "values"
+      ],
+      "title": "SourceRecord",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "uri": {
+      "title": "Uri",
+      "type": "string"
+    },
+    "columns": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Columns",
+      "type": "array"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/SourceRecord"
+      },
+      "title": "Records",
+      "type": "array"
+    }
+  },
+  "required": [
+    "source_id",
+    "uri",
+    "columns",
+    "records"
+  ],
+  "title": "SourceBatch",
+  "type": "object"
+}

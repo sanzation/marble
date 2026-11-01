@@ -1,0 +1,16 @@
+{
+  "description": "Hand-labelled expectations for three synthetic municipal site datasets. These are NOT claims about real sites.",
+  "source_identifier_columns": {
+    "dcc_register": "Reg ID",
+    "council_extract": "Site Ref",
+    "gis_sites": "Reference"
+  },
+  "entity_keys": ["DCC-101", "DCC-102", "DCC-103", "DCC-104", "DCC-105", "DCC-999"],
+  "expected_mappings": {
+    "dcc_register": {"Reg ID": "register_id", "Site Address": "address", "Local Authority": "local_authority"},
+    "council_extract": {"Site Ref": "register_id", "Location": "address", "Council": "local_authority"},
+    "gis_sites": {"Reference": "register_id", "addr": "address", "LA Code": "local_authority"}
+  },
+  "critical_negative_pair": ["DCC-101", "DCC-999"],
+  "expected_same_entity_pairs": 8
+}

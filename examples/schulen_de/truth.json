@@ -1,0 +1,489 @@
+{
+  "meta": {
+    "synthetic": true,
+    "note": "Alle Schulen, Nummern, Adressen, Mailadressen und Koordinaten sind erfunden. Struktur und typische Eigenheiten sind an reale Landesverzeichnisse angelehnt, aber nicht 1:1 kopiert.",
+    "row_index": "1-basiert, ohne Headerzeile",
+    "labeled_on": "2026-11-01",
+    "labeled_before_implementation": true
+  },
+  "sources": {
+    "nrw": {
+      "file": "nrw_landesverzeichnis.csv",
+      "encoding": "utf-8",
+      "delimiter": ";",
+      "decimal": ",",
+      "crs": "unlabeled (Werte-Range passt zu EPSG:25832)"
+    },
+    "berlin": {
+      "file": "berlin_schulverzeichnis.csv",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "decimal": ".",
+      "crs": "EPSG:25833 (im Spaltennamen dokumentiert)"
+    },
+    "ddorf": {
+      "file": "duesseldorf_excel_export.csv",
+      "encoding": "cp1252",
+      "delimiter": ";",
+      "decimal": null,
+      "crs": null
+    }
+  },
+  "schema_mapping": {
+    "school_id": {
+      "nrw": "Schulnummer",
+      "berlin": "BSN",
+      "ddorf": "Schulnr",
+      "note": "BSN ist ein anderes ID-System als die NRW-Schulnummer; ddorf.Nr. ist laufende Nummer und KEINE school_id"
+    },
+    "school_name": {
+      "nrw": "Amtliche Schulbezeichnung",
+      "berlin": "Schulname",
+      "ddorf": "Name der Schule"
+    },
+    "school_type": {
+      "nrw": "Schulform",
+      "berlin": "Schulart",
+      "ddorf": "Schulart"
+    },
+    "operator": {
+      "nrw": "Rechtsform",
+      "berlin": "Traeger",
+      "ddorf": "Träger",
+      "note": "Rechtsform (öffentlich/privat) ≠ Träger (Stadt/Verein) -> review"
+    },
+    "postal_code": {
+      "nrw": "PLZ",
+      "berlin": "PLZ",
+      "ddorf": "Adresse (zusammengesetzt)"
+    },
+    "street_address": {
+      "nrw": [
+        "Strasse",
+        "Hausnummer"
+      ],
+      "berlin": "Strasse",
+      "ddorf": "Adresse (zusammengesetzt)",
+      "expected_disposition": "review",
+      "reason": "keine 1:1-Zuordnung: getrennt vs. kombiniert"
+    },
+    "easting_northing": {
+      "nrw": [
+        "Rechtswert",
+        "Hochwert"
+      ],
+      "berlin": [
+        "x_25833",
+        "y_25833"
+      ],
+      "expected_disposition": "review",
+      "reason": "CRS in NRW-Datei nicht deklariert, unterschiedlich zu Berlin; keine Transformation in v0.0.2"
+    },
+    "row_counter_not_id": {
+      "ddorf": "Nr.",
+      "expected": "nicht auf school_id mappen"
+    }
+  },
+  "entities": [
+    {
+      "id": "E01",
+      "name": "Goethe-Gymnasium Düsseldorf",
+      "members": [
+        [
+          "nrw",
+          1
+        ],
+        [
+          "ddorf",
+          1
+        ],
+        [
+          "ddorf",
+          8
+        ]
+      ],
+      "note": "ddorf enthält Duplikat innerhalb der Quelle"
+    },
+    {
+      "id": "E02",
+      "name": "GGS Am Rhein",
+      "members": [
+        [
+          "nrw",
+          2
+        ],
+        [
+          "ddorf",
+          2
+        ]
+      ]
+    },
+    {
+      "id": "E03",
+      "name": "Realschule Nord",
+      "members": [
+        [
+          "nrw",
+          3
+        ],
+        [
+          "ddorf",
+          3
+        ]
+      ]
+    },
+    {
+      "id": "E04",
+      "name": "Gesamtschule Bilk",
+      "members": [
+        [
+          "nrw",
+          4
+        ],
+        [
+          "ddorf",
+          4
+        ]
+      ],
+      "expected_disposition": "review",
+      "reason": "Name+Adresse identisch, aber Schulnr widerspricht (100004 vs 100040) -> kein Auto-Match"
+    },
+    {
+      "id": "E05",
+      "name": "Goethe-Grundschule",
+      "members": [
+        [
+          "nrw",
+          5
+        ]
+      ]
+    },
+    {
+      "id": "E06",
+      "name": "Förderschule Am Park",
+      "members": [
+        [
+          "nrw",
+          6
+        ]
+      ]
+    },
+    {
+      "id": "E07",
+      "name": "Berufskolleg Technik",
+      "members": [
+        [
+          "nrw",
+          7
+        ]
+      ]
+    },
+    {
+      "id": "E08",
+      "name": "Montessori-Grundschule Linden (Düsseldorf)",
+      "members": [
+        [
+          "nrw",
+          8
+        ],
+        [
+          "ddorf",
+          5
+        ]
+      ],
+      "note": "'GS' mehrdeutig; Match-Hypothese stützt sich auf Adresse"
+    },
+    {
+      "id": "E09",
+      "name": "KGS Sankt Martin",
+      "members": [
+        [
+          "ddorf",
+          6
+        ]
+      ]
+    },
+    {
+      "id": "E10",
+      "name": "KGS Am Wald",
+      "members": [
+        [
+          "ddorf",
+          7
+        ]
+      ]
+    },
+    {
+      "id": "E11",
+      "name": "Goethe-Gymnasium Berlin",
+      "members": [
+        [
+          "berlin",
+          1
+        ]
+      ]
+    },
+    {
+      "id": "E12",
+      "name": "Grundschule am Park Berlin",
+      "members": [
+        [
+          "berlin",
+          2
+        ]
+      ]
+    },
+    {
+      "id": "E13",
+      "name": "OSZ Handel",
+      "members": [
+        [
+          "berlin",
+          3
+        ]
+      ]
+    },
+    {
+      "id": "E14",
+      "name": "ISS Nord",
+      "members": [
+        [
+          "berlin",
+          4
+        ]
+      ]
+    },
+    {
+      "id": "E15",
+      "name": "Fritz-Reuter-Grundschule",
+      "members": [
+        [
+          "berlin",
+          5
+        ]
+      ]
+    },
+    {
+      "id": "E16",
+      "name": "Montessori-Grundschule Linden (Berlin)",
+      "members": [
+        [
+          "berlin",
+          6
+        ]
+      ]
+    }
+  ],
+  "must_not_merge": [
+    {
+      "a": [
+        "nrw",
+        1
+      ],
+      "b": [
+        "berlin",
+        1
+      ],
+      "reason": "gleicher Name, anderes Bundesland, andere PLZ/Ort"
+    },
+    {
+      "a": [
+        "nrw",
+        8
+      ],
+      "b": [
+        "berlin",
+        6
+      ],
+      "reason": "gleicher Name UND gleiche Straße+Nr, aber PLZ/Ort/Land widersprechen"
+    },
+    {
+      "a": [
+        "nrw",
+        1
+      ],
+      "b": [
+        "nrw",
+        5
+      ],
+      "reason": "Goethe-Gymnasium vs Goethe-Grundschule: ähnlicher Name, andere Schulform+Adresse"
+    },
+    {
+      "a": [
+        "nrw",
+        6
+      ],
+      "b": [
+        "berlin",
+        2
+      ],
+      "reason": "'Am Park' in beiden Namen, andere Schulform/Stadt"
+    },
+    {
+      "a": [
+        "ddorf",
+        6
+      ],
+      "b": [
+        "ddorf",
+        7
+      ],
+      "reason": "gleiche Abkürzung KGS, verschiedene Schulen"
+    }
+  ],
+  "expected_normalization": [
+    {
+      "id": "N01",
+      "src": "ddorf",
+      "row": 1,
+      "field": "school_name",
+      "op": "trim",
+      "raw": "  Goethe-Gym.  ",
+      "proposed": "Goethe-Gym.",
+      "disposition": "accepted"
+    },
+    {
+      "id": "N02",
+      "src": "ddorf",
+      "row": 8,
+      "field": "school_name",
+      "op": "casefold",
+      "raw": "goethe-gymnasium",
+      "proposed": "Goethe-Gymnasium",
+      "disposition": "accepted",
+      "note": "Wertvariante, noch kein Entity-Merge"
+    },
+    {
+      "id": "N03",
+      "src": "ddorf",
+      "row": 1,
+      "field": "school_name",
+      "op": "alias_lookup",
+      "raw": "Goethe-Gym.",
+      "proposed": "Goethe-Gymnasium",
+      "pack": "schulen-de",
+      "disposition": "accepted",
+      "evidence": "Pack-Eintrag + gleiche Zeile school_type=Gymnasium"
+    },
+    {
+      "id": "N04",
+      "src": "ddorf",
+      "row": 2,
+      "field": "school_name",
+      "op": "alias_lookup",
+      "raw": "GGS Am Rhein",
+      "proposed": "Gemeinschaftsgrundschule Am Rhein",
+      "pack": "schulen-de",
+      "disposition": "accepted"
+    },
+    {
+      "id": "N05",
+      "src": "ddorf",
+      "row": 1,
+      "field": "street",
+      "op": "alias_lookup",
+      "raw": "Schillerstr.",
+      "proposed": "Schillerstraße",
+      "pack": "schulen-de",
+      "disposition": "accepted"
+    },
+    {
+      "id": "N06",
+      "src": "ddorf",
+      "row": 3,
+      "field": "street",
+      "op": "alias_lookup",
+      "raw": "Nordstrasse",
+      "proposed": "Nordstraße",
+      "pack": "schulen-de",
+      "disposition": "accepted"
+    },
+    {
+      "id": "N07",
+      "src": "ddorf",
+      "row": 7,
+      "field": "school_name",
+      "op": "alias_lookup",
+      "raw": "KGS Am Wald",
+      "proposed": "Kooperative Gesamtschule Am Wald",
+      "pack": "schulen-de",
+      "disposition": "accepted",
+      "evidence": "explizite context_rule: school_type=Gesamtschule"
+    },
+    {
+      "id": "N08",
+      "src": "ddorf",
+      "row": 6,
+      "field": "school_name",
+      "op": "alias_lookup",
+      "raw": "KGS Sankt Martin",
+      "proposed": null,
+      "candidates": [
+        "Katholische Grundschule Sankt Martin",
+        "Kooperative Gesamtschule Sankt Martin"
+      ],
+      "disposition": "review",
+      "reason": "school_type leer; Träger 'Erzbistum Köln' ist schwacher Hinweis, keine Regel"
+    },
+    {
+      "id": "N09",
+      "src": "ddorf",
+      "row": 5,
+      "field": "school_type",
+      "op": "alias_lookup",
+      "raw": "GS",
+      "proposed": null,
+      "candidates": [
+        "Grundschule",
+        "Gesamtschule"
+      ],
+      "disposition": "review",
+      "reason": "mehrdeutig; Hinweis aus Match mit nrw/8 darf nicht allein für 'accepted' reichen (zirkuläre Evidenz)"
+    },
+    {
+      "id": "N10",
+      "src": "berlin",
+      "row": 3,
+      "field": "school_type",
+      "op": "category_equivalence",
+      "raw": "Oberstufenzentrum",
+      "proposed": "berufsbildende Schule",
+      "disposition": "review",
+      "reason": "approximative Äquivalenz mit nrw 'Berufskolleg'"
+    },
+    {
+      "id": "N11",
+      "src": "ddorf",
+      "row": "all",
+      "field": "as_of_date",
+      "op": "parse_date_de",
+      "raw": "15.10.2023",
+      "proposed": "2023-10-15",
+      "disposition": "accepted",
+      "tier": "stretch",
+      "evidence": "Tag 15 > 12 beweist Tag-zuerst-Format"
+    },
+    {
+      "id": "N12",
+      "src": "nrw",
+      "row": "all",
+      "field": "easting/northing",
+      "op": "parse_decimal_de",
+      "raw": "344812,30",
+      "proposed": "344812.30",
+      "disposition": "accepted",
+      "tier": "stretch",
+      "note": "nur Zahlenformat; keine CRS-Transformation"
+    }
+  ],
+  "nondomain_check": {
+    "file": "nondomain_kgs.csv",
+    "expect": "Mit aktivem Pack 'schulen-de' darf 'KGS' in Spalte unit NICHT als Schulform vorgeschlagen werden (field_scope). 'KGS'/'kgs' dürfen höchstens als casefold-Variante gleicher Zeichenfolge erkannt werden. Kein alias_lookup-Vorschlag."
+  },
+  "global_invariants": {
+    "entity_merges": 0,
+    "raw_values_changed": 0,
+    "lost_columns": 0,
+    "deterministic_ids": true
+  }
+}

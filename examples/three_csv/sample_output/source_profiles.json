@@ -1,0 +1,234 @@
+[
+  {
+    "schema_version": 1,
+    "source_id": "dcc_register",
+    "uri": "examples/three_csv/dcc_register.csv",
+    "record_count": 4,
+    "columns": [
+      {
+        "name": "Reg ID",
+        "nonempty": 4,
+        "distinct_nonempty": 4,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "DCC-101",
+          "DCC-102",
+          "DCC-999",
+          "DCC-103"
+        ],
+        "detected_pattern": "alphanumeric"
+      },
+      {
+        "name": "Site Address",
+        "nonempty": 4,
+        "distinct_nonempty": 4,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "12 Main Street",
+          "14 Main Street",
+          "12 Main Street, Unit B",
+          "7 Bridge Road"
+        ],
+        "detected_pattern": "alphanumeric"
+      },
+      {
+        "name": "Local Authority",
+        "nonempty": 4,
+        "distinct_nonempty": 1,
+        "completeness": 1.0,
+        "uniqueness": 0.25,
+        "sample_values": [
+          "Dublin City Council"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Status",
+        "nonempty": 4,
+        "distinct_nonempty": 2,
+        "completeness": 1.0,
+        "uniqueness": 0.5,
+        "sample_values": [
+          "Active",
+          "Removed"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Date Added",
+        "nonempty": 4,
+        "distinct_nonempty": 4,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "2024-06-10",
+          "2023-04-11",
+          "2022-05-09",
+          "2020-02-16"
+        ],
+        "detected_pattern": "iso_date"
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "source_id": "council_extract",
+    "uri": "examples/three_csv/council_extract.csv",
+    "record_count": 4,
+    "columns": [
+      {
+        "name": "Site Ref",
+        "nonempty": 4,
+        "distinct_nonempty": 4,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "DCC-101",
+          "DCC-102",
+          "DCC-103",
+          "DCC-104"
+        ],
+        "detected_pattern": "alphanumeric"
+      },
+      {
+        "name": "Location",
+        "nonempty": 4,
+        "distinct_nonempty": 4,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "12 Main St.",
+          "14 Main St.",
+          "7 Bridge Rd",
+          "26 Mill Road"
+        ],
+        "detected_pattern": "alphanumeric"
+      },
+      {
+        "name": "Council",
+        "nonempty": 4,
+        "distinct_nonempty": 1,
+        "completeness": 1.0,
+        "uniqueness": 0.25,
+        "sample_values": [
+          "Dublin City Council"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Current Status",
+        "nonempty": 4,
+        "distinct_nonempty": 2,
+        "completeness": 1.0,
+        "uniqueness": 0.5,
+        "sample_values": [
+          "Active",
+          "Removed"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Entry Date",
+        "nonempty": 4,
+        "distinct_nonempty": 4,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "2024-06-10",
+          "2023-04-11",
+          "2020-02-16",
+          "2025-01-14"
+        ],
+        "detected_pattern": "iso_date"
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "source_id": "gis_sites",
+    "uri": "examples/three_csv/gis_sites.csv",
+    "record_count": 4,
+    "columns": [
+      {
+        "name": "Reference",
+        "nonempty": 4,
+        "distinct_nonempty": 4,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "DCC-101",
+          "DCC-102",
+          "DCC-999",
+          "DCC-105"
+        ],
+        "detected_pattern": "alphanumeric"
+      },
+      {
+        "name": "addr",
+        "nonempty": 4,
+        "distinct_nonempty": 4,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "12 Main Street",
+          "14 Main Street",
+          "12 Main Street, Unit B",
+          "9 Canal Road"
+        ],
+        "detected_pattern": "alphanumeric"
+      },
+      {
+        "name": "LA Code",
+        "nonempty": 4,
+        "distinct_nonempty": 1,
+        "completeness": 1.0,
+        "uniqueness": 0.25,
+        "sample_values": [
+          "DCC"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "State",
+        "nonempty": 4,
+        "distinct_nonempty": 1,
+        "completeness": 1.0,
+        "uniqueness": 0.25,
+        "sample_values": [
+          "Active"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "latitude",
+        "nonempty": 4,
+        "distinct_nonempty": 4,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "53.3412",
+          "53.3414",
+          "53.34125",
+          "53.3422"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "longitude",
+        "nonempty": 4,
+        "distinct_nonempty": 4,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "-6.2648",
+          "-6.2647",
+          "-6.26479",
+          "-6.2694"
+        ],
+        "detected_pattern": "numeric"
+      }
+    ]
+  }
+]

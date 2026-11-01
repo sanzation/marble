@@ -1,0 +1,126 @@
+Metadata-Version: 2.4
+Name: marble-core-prototype
+Version: 0.0.1
+Summary: Evidence-first CSV schema and entity-grain discovery prototype
+License: Apache-2.0
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydantic<3,>=2.6
+Requires-Dist: duckdb<3,>=1.1
+Provides-Extra: arrow
+Requires-Dist: pyarrow>=17; extra == "arrow"
+Provides-Extra: ml
+Requires-Dist: rapidfuzz>=3; extra == "ml"
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: pytest-cov>=5; extra == "dev"
+Requires-Dist: pyright>=1.1; extra == "dev"
+Dynamic: license-file
+
+# Marble Core – v0.0.1 (experimental)
+
+**Three CSVs in → explainable field and entity-grain hypotheses out.**
+
+This is an executable, **rule-based discovery kernel**. It intentionally does **not** merge or rewrite entities and it does **not** call an LLM or an ML model yet. It is a vertical test bed for developing automatic schema inference, record matching, normalisation and eventually reusable mapping recipes.
+
+## Quick start
+
+Python 3.12+ and internet access for package installation are required on your machine.
+
+```bash
+python -m venv .venv
+# activate the virtualenv
+python -m pip install -e '.[dev]'
+marble inspect \
+  examples/three_csv/dcc_register.csv \
+  examples/three_csv/council_extract.csv \
+  examples/three_csv/gis_sites.csv \
+  --out out --db marble.duckdb
+python -m pytest -q
+python -m pyright
+```
+
+Windows PowerShell: activate with `.\.venv\Scripts\Activate.ps1`, or run
+`.\.venv\Scripts\python.exe` directly instead of `python`. In VS Code, select
+`.venv\Scripts\python.exe` with **Python: Select Interpreter** if another
+interpreter is already selected. The workspace default points to `.venv`.
+
+To execute the rule-based discovery without installing DuckDB (provided Pydantic 2 is installed):
+
+```bash
+PYTHONPATH=src python -m marble.cli inspect \
+  examples/three_csv/dcc_register.csv \
+  examples/three_csv/council_extract.csv \
+  examples/three_csv/gis_sites.csv \
+  --out out --no-db
+```
+
+Windows PowerShell: set `$env:PYTHONPATH='src'`, then run `python -m marble.cli ...`. Normally, use the installed `marble` CLI instead.
+
+## The key debugging loop
+
+```bash
+marble explain out/report.json --source gis_sites --field Reference
+marble explain out/report.json --source council_extract --field Location
+marble explain out/report.json --kind entity_grain
+marble explain out/report.json --kind record_match
+```
+
+Every generated hypothesis includes its **source**, **target**, **score** (an uncalibrated heuristic, not a probability), **positive/negative evidence**, **individual validation checks** and **disposition** (`accepted`, `review`, `rejected`). The status `accepted` means a *rule-supported hypothesis*, **not ground-truth verification** or authorization to merge datasets. Tests compare expected answers to labelled synthetic fixtures.
+
+## Pipeline
+
+```text
+3 CSVs
+  → SourceBatch v1  (strings preserved, deterministic hashes)
+  → ColumnProfile v1
+  → FieldMapping hypotheses (header, value patterns, cross-source support)
+  → Source-grain hypotheses (site/event/organization)
+  → Cross-source row-match hypotheses (ID and address checks)
+  → RecipeDraft v1 (proposal only)
+  → CanonicalPreview v1 (accepted field mappings only, raw values unchanged)
+  → JSON/CSV reports and optional DuckDB snapshot
+```
+
+The core does not assume that similar addresses imply the same real-world object. Conflicting register IDs cause a **rejected** row-match hypothesis, even if addresses strongly resemble each other. Potentially overlapping records with matching IDs are surfaced as hypotheses, never actually merged.
+
+## What is emitted?
+
+- `report.json`: full `InspectionReport` contract (`schema_version = 1`)
+- `source_profiles.json`: profiling stats and sample patterns per source/column
+- `hypotheses.json`: each field mapping, source grain and row-match hypothesis with evidence and checks
+- `hypotheses.csv`: human-readable debugging table with IDs and dispositions
+- `recipe_draft.json`: proposed mappings and coarse source type, `resolution_policy = no_merges`
+- `canonical_preview.json`: unmerged source records with *accepted* field-name mappings, plus `unmapped_fields`
+- `marble.duckdb`: optional DuckDB snapshot with `source_records`, `source_profiles`, `hypotheses`, `recipe_drafts` and `run_reports`
+
+Schemas are in `docs/schemas/`. See [`docs/CONTRACTS.md`](docs/CONTRACTS.md).
+
+## Deliberate limitations
+
+- **CSV only** for this prototype (CSV dialect auto-detection; UTF-8/UTF-8 BOM). JSON, HTML, GeoJSON and API adapters come later behind the same input contract.
+- **Known tiny ontology:** `register_id`, `address`, `local_authority`, `status`, `recorded_date`, `latitude`, `longitude`. Entity grains `site`, `event`, `organization`. This is an explicit test vocabulary, not general semantic understanding.
+- **No real ML/LLM yet.** Rules and statistical overlap first; low-confidence hypotheses are left for review. The future ML fallback must compete against this baseline.
+- **No value transforms applied.** `canonical_preview` renames only confidently mapped fields; it retains all raw values. This prevents accidental loss during discovery.
+- **No historical incremental build.** The DuckDB adapter transactionally replaces its single inspection snapshot. Source row IDs are content-derived in the absence of primary keys; therefore a changed row's ID will change. User-specified stable primary keys belong in the next iteration.
+- **No automatic merging**, no entity store yet, and no compression comparison. The purpose is testing the inference step in isolation.
+- **No claims of probabilistic confidence.** The numeric score is an explainable ranking heuristic, not an ML-calibrated probability.
+- API ingestion and untrusted URLs, if added later, require explicit network restrictions and response-size limits.
+
+## Development: hypothesis → validation → regression test
+
+1. Add a small counterexample in `examples/three_csv/` or as a temporary pytest fixture.
+2. Record the expected field meaning or entity relationship *before* modifying rules.
+3. Run `marble inspect` and `marble explain`; inspect every failed check.
+4. Change `src/marble/semantics.py` (domain signals) or `src/marble/discovery.py` (reasoning/thresholds).
+5. Add a regression test confirming both the positive result and a negative lookalike case.
+6. Compare against the previous output: **correct matches**, **false positives**, **manual-review load**, **no lost source values**.
+
+Only after we trust the proposals should we add a recipe executor and a real entity/fact store.
+
+## Labelled benchmark
+
+`examples/three_csv/truth.json` records intentionally hand-labelled mapping and same-entity expectations for the **synthetic** example. `tests/test_labelled_baseline.py` checks candidate-pair precision/recall and known negative cases. A perfect score on this toy fixture is not evidence of general accuracy; the next step is genuinely heterogeneous, challenging datasets.
+
+**Validation status of this delivered archive:** the CSV discovery pipeline, JSON contracts, labelled fixture tests and CLI explain functionality were exercised. The optional DuckDB integration test is included but skipped in the offline build environment because DuckDB could not be installed there; it will run automatically after a normal `pip install -e '.[dev]'`.

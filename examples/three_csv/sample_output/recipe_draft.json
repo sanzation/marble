@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "recipe_id": "draft-e85eff61ef2579f6",
+  "generated_by": "marble-discovery-0.0.1",
+  "mappings": [
+    {
+      "source_id": "dcc_register",
+      "source_field": "Reg ID",
+      "canonical_field": "register_id",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-8135b4cd883564c1"
+    },
+    {
+      "source_id": "dcc_register",
+      "source_field": "Site Address",
+      "canonical_field": "address",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-b64847d9f0373880"
+    },
+    {
+      "source_id": "dcc_register",
+      "source_field": "Local Authority",
+      "canonical_field": "local_authority",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-7699aefc1a0cfbb0"
+    },
+    {
+      "source_id": "dcc_register",
+      "source_field": "Status",
+      "canonical_field": "status",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-5c91d7c391d5b478"
+    },
+    {
+      "source_id": "dcc_register",
+      "source_field": "Date Added",
+      "canonical_field": "recorded_date",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-5148dca325fa9c81"
+    },
+    {
+      "source_id": "council_extract",
+      "source_field": "Site Ref",
+      "canonical_field": "register_id",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-ffdd0a117744244a"
+    },
+    {
+      "source_id": "council_extract",
+      "source_field": "Location",
+      "canonical_field": "address",
+      "disposition": "review",
+      "hypothesis_id": "hyp-fbecc5230c6a86d2"
+    },
+    {
+      "source_id": "council_extract",
+      "source_field": "Council",
+      "canonical_field": "local_authority",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-4ca8c586b1386d34"
+    },
+    {
+      "source_id": "council_extract",
+      "source_field": "Current Status",
+      "canonical_field": "status",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-752236923a70187e"
+    },
+    {
+      "source_id": "council_extract",
+      "source_field": "Entry Date",
+      "canonical_field": "recorded_date",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-f2be1d0a0e0049f0"
+    },
+    {
+      "source_id": "gis_sites",
+      "source_field": "Reference",
+      "canonical_field": "register_id",
+      "disposition": "review",
+      "hypothesis_id": "hyp-65081e0d7084dec2"
+    },
+    {
+      "source_id": "gis_sites",
+      "source_field": "addr",
+      "canonical_field": "address",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-3e864da98ad016e2"
+    },
+    {
+      "source_id": "gis_sites",
+      "source_field": "LA Code",
+      "canonical_field": "local_authority",
+      "disposition": "review",
+      "hypothesis_id": "hyp-66b5633de99fd5f6"
+    },
+    {
+      "source_id": "gis_sites",
+      "source_field": "State",
+      "canonical_field": "status",
+      "disposition": "review",
+      "hypothesis_id": "hyp-2467cf2dd605c5d7"
+    },
+    {
+      "source_id": "gis_sites",
+      "source_field": "latitude",
+      "canonical_field": "latitude",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-db13ab59ae5b88fb"
+    },
+    {
+      "source_id": "gis_sites",
+      "source_field": "longitude",
+      "canonical_field": "longitude",
+      "disposition": "accepted",
+      "hypothesis_id": "hyp-e8a2b421d95061f1"
+    }
+  ],
+  "entity_grains": {
+    "dcc_register": "site",
+    "council_extract": "site",
+    "gis_sites": "site"
+  },
+  "resolution_policy": "no_merges",
+  "requires_review": true
+}

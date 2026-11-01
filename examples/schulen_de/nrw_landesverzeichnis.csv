@@ -1,0 +1,9 @@
+Schulnummer;Schulform;Amtliche Schulbezeichnung;Strasse;Hausnummer;PLZ;Ort;Telefon;E-Mail;Rechtsform;Rechtswert;Hochwert
+100001;Gymnasium;Goethe-Gymnasium;Schillerstraße;12;40210;Düsseldorf;0211 555-0101;sekretariat@goethe-gym.example;öffentlich;344812,30;5677120,55
+100002;Gemeinschaftsgrundschule;Gemeinschaftsgrundschule Am Rhein;Rheinufer;5;40213;Düsseldorf;0211 555-0102;info@ggs-am-rhein.example;öffentlich;344990,10;5677301,20
+100003;Realschule;Städtische Realschule Nord;Nordstraße;44;40477;Düsseldorf;0211 555-0103;büro@rs-nord.example;öffentlich;345620,75;5679010,40
+100004;Gesamtschule;Gesamtschule Bilk;Bilker Weg;23;40223;Düsseldorf;0211 555-0104;info@gesamtschule-bilk.example;öffentlich;344300,00;5675800,90
+100005;Grundschule;Goethe-Grundschule;Goethestraße;3;40237;Düsseldorf;0211 555-0105;info@goethe-gs.example;öffentlich;347010,20;5678250,10
+100006;Förderschule;Förderschule Am Park;Parkweg;8;50667;Köln;0221 555-0106;info@fs-am-park.example;öffentlich;356120,40;5645500,30
+100007;Berufskolleg;Berufskolleg Technik;Technikerring;1;50823;Köln;0221 555-0107;info@bk-technik.example;öffentlich;354800,00;5646990,60
+100008;Grundschule;Montessori-Grundschule Linden;Lindenallee;17;40545;Düsseldorf;0211 555-0108;info@montessori-linden.example;privat;343500,50;5677800,70

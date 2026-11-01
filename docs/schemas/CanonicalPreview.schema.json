@@ -1,0 +1,48 @@
+{
+  "properties": {
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "record_key": {
+      "title": "Record Key",
+      "type": "string"
+    },
+    "canonical_fields": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "title": "Canonical Fields",
+      "type": "object"
+    },
+    "unmapped_fields": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      },
+      "title": "Unmapped Fields",
+      "type": "object"
+    }
+  },
+  "required": [
+    "source_id",
+    "record_key",
+    "canonical_fields",
+    "unmapped_fields"
+  ],
+  "title": "CanonicalPreview",
+  "type": "object"
+}

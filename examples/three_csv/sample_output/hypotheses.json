@@ -1,0 +1,2128 @@
+[
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-8135b4cd883564c1",
+    "kind": "field_mapping",
+    "source_id": "dcc_register",
+    "source_field": "Reg ID",
+    "left_record": null,
+    "right_record": null,
+    "target": "register_id",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Reg ID' resembles semantic field 'register_id'",
+        "strength": 1.0
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'register_id'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 1.0
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 1.0
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-b64847d9f0373880",
+    "kind": "field_mapping",
+    "source_id": "dcc_register",
+    "source_field": "Site Address",
+    "left_record": null,
+    "right_record": null,
+    "target": "address",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Site Address' resembles semantic field 'address'",
+        "strength": 1.0
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'address'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 1.0
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 1.0
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-7699aefc1a0cfbb0",
+    "kind": "field_mapping",
+    "source_id": "dcc_register",
+    "source_field": "Local Authority",
+    "left_record": null,
+    "right_record": null,
+    "target": "local_authority",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Local Authority' resembles semantic field 'local_authority'",
+        "strength": 1.0
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'local_authority'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 1.0
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 1.0
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 0.25
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-5c91d7c391d5b478",
+    "kind": "field_mapping",
+    "source_id": "dcc_register",
+    "source_field": "Status",
+    "left_record": null,
+    "right_record": null,
+    "target": "status",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Status' resembles semantic field 'status'",
+        "strength": 1.0
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'status'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 1.0
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 1.0
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 0.5
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-5148dca325fa9c81",
+    "kind": "field_mapping",
+    "source_id": "dcc_register",
+    "source_field": "Date Added",
+    "left_record": null,
+    "right_record": null,
+    "target": "recorded_date",
+    "score": 0.95,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Date Added' resembles semantic field 'recorded_date'",
+        "strength": 0.98
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'recorded_date'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 0.75
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 0.98
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 0.75
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-ffdd0a117744244a",
+    "kind": "field_mapping",
+    "source_id": "council_extract",
+    "source_field": "Site Ref",
+    "left_record": null,
+    "right_record": null,
+    "target": "register_id",
+    "score": 0.95,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Site Ref' resembles semantic field 'register_id'",
+        "strength": 0.98
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'register_id'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 0.75
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 0.98
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 0.75
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-fbecc5230c6a86d2",
+    "kind": "field_mapping",
+    "source_id": "council_extract",
+    "source_field": "Location",
+    "left_record": null,
+    "right_record": null,
+    "target": "address",
+    "score": 0.814,
+    "disposition": "review",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Location' resembles semantic field 'address'",
+        "strength": 0.76
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'address'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 0.75
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 0.76
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 0.75
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-4ca8c586b1386d34",
+    "kind": "field_mapping",
+    "source_id": "council_extract",
+    "source_field": "Council",
+    "left_record": null,
+    "right_record": null,
+    "target": "local_authority",
+    "score": 0.975,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Council' resembles semantic field 'local_authority'",
+        "strength": 0.96
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'local_authority'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 0.96
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 1.0
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 0.25
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-752236923a70187e",
+    "kind": "field_mapping",
+    "source_id": "council_extract",
+    "source_field": "Current Status",
+    "left_record": null,
+    "right_record": null,
+    "target": "status",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Current Status' resembles semantic field 'status'",
+        "strength": 1.0
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'status'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 1.0
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 1.0
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 0.5
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-f2be1d0a0e0049f0",
+    "kind": "field_mapping",
+    "source_id": "council_extract",
+    "source_field": "Entry Date",
+    "left_record": null,
+    "right_record": null,
+    "target": "recorded_date",
+    "score": 0.944,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Entry Date' resembles semantic field 'recorded_date'",
+        "strength": 0.97
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'recorded_date'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 0.75
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 0.97
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 0.75
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-65081e0d7084dec2",
+    "kind": "field_mapping",
+    "source_id": "gis_sites",
+    "source_field": "Reference",
+    "left_record": null,
+    "right_record": null,
+    "target": "register_id",
+    "score": 0.776,
+    "disposition": "review",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'Reference' resembles semantic field 'register_id'",
+        "strength": 0.7
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'register_id'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 0.75
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 0.7
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 0.75
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-3e864da98ad016e2",
+    "kind": "field_mapping",
+    "source_id": "gis_sites",
+    "source_field": "addr",
+    "left_record": null,
+    "right_record": null,
+    "target": "address",
+    "score": 0.931,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'addr' resembles semantic field 'address'",
+        "strength": 0.95
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'address'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 0.75
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 0.95
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 0.75
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-66b5633de99fd5f6",
+    "kind": "field_mapping",
+    "source_id": "gis_sites",
+    "source_field": "LA Code",
+    "left_record": null,
+    "right_record": null,
+    "target": "local_authority",
+    "score": 0.782,
+    "disposition": "review",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'LA Code' resembles semantic field 'local_authority'",
+        "strength": 0.89
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'local_authority'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 0.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 0.89
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": false,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 0.0
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 0.25
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-2467cf2dd605c5d7",
+    "kind": "field_mapping",
+    "source_id": "gis_sites",
+    "source_field": "State",
+    "left_record": null,
+    "right_record": null,
+    "target": "status",
+    "score": 0.814,
+    "disposition": "review",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'State' resembles semantic field 'status'",
+        "strength": 0.7
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'status'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 0.7
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": true,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 1.0
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 0.25
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-db13ab59ae5b88fb",
+    "kind": "field_mapping",
+    "source_id": "gis_sites",
+    "source_field": "latitude",
+    "left_record": null,
+    "right_record": null,
+    "target": "latitude",
+    "score": 0.85,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'latitude' resembles semantic field 'latitude'",
+        "strength": 1.0
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'latitude'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 0.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 1.0
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": false,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 0.0
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-e8a2b421d95061f1",
+    "kind": "field_mapping",
+    "source_id": "gis_sites",
+    "source_field": "longitude",
+    "left_record": null,
+    "right_record": null,
+    "target": "longitude",
+    "score": 0.85,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "column_name",
+        "detail": "'longitude' resembles semantic field 'longitude'",
+        "strength": 1.0
+      },
+      {
+        "signal": "value_pattern",
+        "detail": "sample values compatible with 'longitude'",
+        "strength": 1.0
+      },
+      {
+        "signal": "other_sources",
+        "detail": "cross-source normalized value overlap",
+        "strength": 0.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "header_is_plausible",
+        "passed": true,
+        "result": "lexical alias match; not semantic certainty",
+        "observed": 1.0
+      },
+      {
+        "name": "values_fit_target",
+        "passed": true,
+        "result": "4/4 observed values compatible",
+        "observed": 1.0
+      },
+      {
+        "name": "sufficient_coverage",
+        "passed": true,
+        "result": "non-null values / source rows",
+        "observed": 1.0
+      },
+      {
+        "name": "cross_source_overlap",
+        "passed": false,
+        "result": "normalized values shared with similar fields; supporting evidence only",
+        "observed": 0.0
+      },
+      {
+        "name": "identifier_is_unique_in_source",
+        "passed": true,
+        "result": "identifier uniqueness expected for a one-row-per-site source; repeated IDs require grain review",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-d69047c60310e097",
+    "kind": "entity_grain",
+    "source_id": "dcc_register",
+    "source_field": null,
+    "left_record": null,
+    "right_record": null,
+    "target": "site",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "structural_signature",
+        "detail": "observed candidate fields: address, local_authority, recorded_date, register_id, status",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "has_address_or_geo",
+        "passed": true,
+        "result": "schema provides supporting fields",
+        "observed": null
+      },
+      {
+        "name": "has_record_identifier",
+        "passed": true,
+        "result": "schema provides supporting fields",
+        "observed": null
+      },
+      {
+        "name": "has_context",
+        "passed": true,
+        "result": "schema provides supporting fields",
+        "observed": null
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-0edf0f5cd851df65",
+    "kind": "entity_grain",
+    "source_id": "dcc_register",
+    "source_field": null,
+    "left_record": null,
+    "right_record": null,
+    "target": "event",
+    "score": 0.0,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "structural_signature",
+        "detail": "observed candidate fields: address, local_authority, recorded_date, register_id, status",
+        "strength": 0.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "has_event_date",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      },
+      {
+        "name": "has_event_action",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-943130e458c5a30f",
+    "kind": "entity_grain",
+    "source_id": "dcc_register",
+    "source_field": null,
+    "left_record": null,
+    "right_record": null,
+    "target": "organization",
+    "score": 0.0,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "structural_signature",
+        "detail": "observed candidate fields: address, local_authority, recorded_date, register_id, status",
+        "strength": 0.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "has_org_name",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      },
+      {
+        "name": "has_org_identifier",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-61823a06c081ecac",
+    "kind": "entity_grain",
+    "source_id": "council_extract",
+    "source_field": null,
+    "left_record": null,
+    "right_record": null,
+    "target": "site",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "structural_signature",
+        "detail": "observed candidate fields: address, local_authority, recorded_date, register_id, status",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "has_address_or_geo",
+        "passed": true,
+        "result": "schema provides supporting fields",
+        "observed": null
+      },
+      {
+        "name": "has_record_identifier",
+        "passed": true,
+        "result": "schema provides supporting fields",
+        "observed": null
+      },
+      {
+        "name": "has_context",
+        "passed": true,
+        "result": "schema provides supporting fields",
+        "observed": null
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-4a47c2ee06293d41",
+    "kind": "entity_grain",
+    "source_id": "council_extract",
+    "source_field": null,
+    "left_record": null,
+    "right_record": null,
+    "target": "event",
+    "score": 0.0,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "structural_signature",
+        "detail": "observed candidate fields: address, local_authority, recorded_date, register_id, status",
+        "strength": 0.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "has_event_date",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      },
+      {
+        "name": "has_event_action",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-13e808c6f3b7ddae",
+    "kind": "entity_grain",
+    "source_id": "council_extract",
+    "source_field": null,
+    "left_record": null,
+    "right_record": null,
+    "target": "organization",
+    "score": 0.0,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "structural_signature",
+        "detail": "observed candidate fields: address, local_authority, recorded_date, register_id, status",
+        "strength": 0.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "has_org_name",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      },
+      {
+        "name": "has_org_identifier",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-16d84610219accb0",
+    "kind": "entity_grain",
+    "source_id": "gis_sites",
+    "source_field": null,
+    "left_record": null,
+    "right_record": null,
+    "target": "site",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "structural_signature",
+        "detail": "observed candidate fields: address, latitude, local_authority, longitude, register_id, status",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "has_address_or_geo",
+        "passed": true,
+        "result": "schema provides supporting fields",
+        "observed": null
+      },
+      {
+        "name": "has_record_identifier",
+        "passed": true,
+        "result": "schema provides supporting fields",
+        "observed": null
+      },
+      {
+        "name": "has_context",
+        "passed": true,
+        "result": "schema provides supporting fields",
+        "observed": null
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-7087de7620a44c12",
+    "kind": "entity_grain",
+    "source_id": "gis_sites",
+    "source_field": null,
+    "left_record": null,
+    "right_record": null,
+    "target": "event",
+    "score": 0.0,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "structural_signature",
+        "detail": "observed candidate fields: address, latitude, local_authority, longitude, register_id, status",
+        "strength": 0.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "has_event_date",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      },
+      {
+        "name": "has_event_action",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-a65c90f61bae7e03",
+    "kind": "entity_grain",
+    "source_id": "gis_sites",
+    "source_field": null,
+    "left_record": null,
+    "right_record": null,
+    "target": "organization",
+    "score": 0.0,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "structural_signature",
+        "detail": "observed candidate fields: address, latitude, local_authority, longitude, register_id, status",
+        "strength": 0.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "has_org_name",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      },
+      {
+        "name": "has_org_identifier",
+        "passed": false,
+        "result": "required fields not discovered",
+        "observed": null
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-44925f7a5b7511e9",
+    "kind": "record_match",
+    "source_id": "dcc_register|council_extract",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:c31b558a1f4a425d7e3a:1",
+    "right_record": "council_extract:sha256:554f883e2f1e3fb958a8:1",
+    "target": "same_real_world_entity",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc101 vs dcc101",
+        "strength": 1.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street vs 12 main street",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": true,
+        "result": "IDs: 'dcc101' versus 'dcc101'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": true,
+        "result": "no contradictory IDs",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-ed04c8fe032ff906",
+    "kind": "record_match",
+    "source_id": "dcc_register|council_extract",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:c31b558a1f4a425d7e3a:1",
+    "right_record": "council_extract:sha256:89b51ff956b2c6d729a5:1",
+    "target": "same_real_world_entity",
+    "score": 0.251,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc101 vs dcc102",
+        "strength": 0.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street vs 14 main street",
+        "strength": 0.929
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": false,
+        "result": "IDs: 'dcc101' versus 'dcc102'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": false,
+        "result": "distinct identifiers must not be auto-merged",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 0.929
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-4f704477cca8edc4",
+    "kind": "record_match",
+    "source_id": "dcc_register|council_extract",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:252f28a25959bac3fe94:1",
+    "right_record": "council_extract:sha256:554f883e2f1e3fb958a8:1",
+    "target": "same_real_world_entity",
+    "score": 0.251,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc102 vs dcc101",
+        "strength": 0.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "14 main street vs 12 main street",
+        "strength": 0.929
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": false,
+        "result": "IDs: 'dcc102' versus 'dcc101'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": false,
+        "result": "distinct identifiers must not be auto-merged",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 0.929
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-38c228d291b42f21",
+    "kind": "record_match",
+    "source_id": "dcc_register|council_extract",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:252f28a25959bac3fe94:1",
+    "right_record": "council_extract:sha256:89b51ff956b2c6d729a5:1",
+    "target": "same_real_world_entity",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc102 vs dcc102",
+        "strength": 1.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "14 main street vs 14 main street",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": true,
+        "result": "IDs: 'dcc102' versus 'dcc102'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": true,
+        "result": "no contradictory IDs",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-aeb9914a6d028e98",
+    "kind": "record_match",
+    "source_id": "dcc_register|council_extract",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:c9835b6e606430c144ed:1",
+    "right_record": "council_extract:sha256:554f883e2f1e3fb958a8:1",
+    "target": "same_real_world_entity",
+    "score": 0.216,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc999 vs dcc101",
+        "strength": 0.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street unit b vs 12 main street",
+        "strength": 0.8
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": false,
+        "result": "IDs: 'dcc999' versus 'dcc101'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": false,
+        "result": "distinct identifiers must not be auto-merged",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 0.8
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-519c62d01e421570",
+    "kind": "record_match",
+    "source_id": "dcc_register|council_extract",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:9a91aacfec447d4eb6b2:1",
+    "right_record": "council_extract:sha256:c8ccae84343421ab5937:1",
+    "target": "same_real_world_entity",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc103 vs dcc103",
+        "strength": 1.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "7 bridge road vs 7 bridge road",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": true,
+        "result": "IDs: 'dcc103' versus 'dcc103'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": true,
+        "result": "no contradictory IDs",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-f97b0b635a6a8343",
+    "kind": "record_match",
+    "source_id": "dcc_register|gis_sites",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:c31b558a1f4a425d7e3a:1",
+    "right_record": "gis_sites:sha256:ac9740108f421466f173:1",
+    "target": "same_real_world_entity",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc101 vs dcc101",
+        "strength": 1.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street vs 12 main street",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": true,
+        "result": "IDs: 'dcc101' versus 'dcc101'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": true,
+        "result": "no contradictory IDs",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-66297e1dda9167ac",
+    "kind": "record_match",
+    "source_id": "dcc_register|gis_sites",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:c31b558a1f4a425d7e3a:1",
+    "right_record": "gis_sites:sha256:eba0bed925d23857f5f4:1",
+    "target": "same_real_world_entity",
+    "score": 0.251,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc101 vs dcc102",
+        "strength": 0.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street vs 14 main street",
+        "strength": 0.929
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": false,
+        "result": "IDs: 'dcc101' versus 'dcc102'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": false,
+        "result": "distinct identifiers must not be auto-merged",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 0.929
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-5e3932efa9b61dbe",
+    "kind": "record_match",
+    "source_id": "dcc_register|gis_sites",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:c31b558a1f4a425d7e3a:1",
+    "right_record": "gis_sites:sha256:1075ae0c484a38742955:1",
+    "target": "same_real_world_entity",
+    "score": 0.216,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc101 vs dcc999",
+        "strength": 0.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street vs 12 main street unit b",
+        "strength": 0.8
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": false,
+        "result": "IDs: 'dcc101' versus 'dcc999'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": false,
+        "result": "distinct identifiers must not be auto-merged",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 0.8
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-7cf613b09d04a416",
+    "kind": "record_match",
+    "source_id": "dcc_register|gis_sites",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:252f28a25959bac3fe94:1",
+    "right_record": "gis_sites:sha256:ac9740108f421466f173:1",
+    "target": "same_real_world_entity",
+    "score": 0.251,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc102 vs dcc101",
+        "strength": 0.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "14 main street vs 12 main street",
+        "strength": 0.929
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": false,
+        "result": "IDs: 'dcc102' versus 'dcc101'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": false,
+        "result": "distinct identifiers must not be auto-merged",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 0.929
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-4c12361538817b1c",
+    "kind": "record_match",
+    "source_id": "dcc_register|gis_sites",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:252f28a25959bac3fe94:1",
+    "right_record": "gis_sites:sha256:eba0bed925d23857f5f4:1",
+    "target": "same_real_world_entity",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc102 vs dcc102",
+        "strength": 1.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "14 main street vs 14 main street",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": true,
+        "result": "IDs: 'dcc102' versus 'dcc102'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": true,
+        "result": "no contradictory IDs",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-536dfb2d736eb128",
+    "kind": "record_match",
+    "source_id": "dcc_register|gis_sites",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:c9835b6e606430c144ed:1",
+    "right_record": "gis_sites:sha256:ac9740108f421466f173:1",
+    "target": "same_real_world_entity",
+    "score": 0.216,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc999 vs dcc101",
+        "strength": 0.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street unit b vs 12 main street",
+        "strength": 0.8
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": false,
+        "result": "IDs: 'dcc999' versus 'dcc101'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": false,
+        "result": "distinct identifiers must not be auto-merged",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 0.8
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-ebd4ae6988c582ab",
+    "kind": "record_match",
+    "source_id": "dcc_register|gis_sites",
+    "source_field": null,
+    "left_record": "dcc_register:sha256:c9835b6e606430c144ed:1",
+    "right_record": "gis_sites:sha256:1075ae0c484a38742955:1",
+    "target": "same_real_world_entity",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc999 vs dcc999",
+        "strength": 1.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street unit b vs 12 main street unit b",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": true,
+        "result": "IDs: 'dcc999' versus 'dcc999'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": true,
+        "result": "no contradictory IDs",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-25efb5fba338e210",
+    "kind": "record_match",
+    "source_id": "council_extract|gis_sites",
+    "source_field": null,
+    "left_record": "council_extract:sha256:554f883e2f1e3fb958a8:1",
+    "right_record": "gis_sites:sha256:ac9740108f421466f173:1",
+    "target": "same_real_world_entity",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc101 vs dcc101",
+        "strength": 1.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street vs 12 main street",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": true,
+        "result": "IDs: 'dcc101' versus 'dcc101'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": true,
+        "result": "no contradictory IDs",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-785f32e06fb0a1a3",
+    "kind": "record_match",
+    "source_id": "council_extract|gis_sites",
+    "source_field": null,
+    "left_record": "council_extract:sha256:554f883e2f1e3fb958a8:1",
+    "right_record": "gis_sites:sha256:eba0bed925d23857f5f4:1",
+    "target": "same_real_world_entity",
+    "score": 0.251,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc101 vs dcc102",
+        "strength": 0.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street vs 14 main street",
+        "strength": 0.929
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": false,
+        "result": "IDs: 'dcc101' versus 'dcc102'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": false,
+        "result": "distinct identifiers must not be auto-merged",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 0.929
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-1d0ac9ce3ddc3113",
+    "kind": "record_match",
+    "source_id": "council_extract|gis_sites",
+    "source_field": null,
+    "left_record": "council_extract:sha256:554f883e2f1e3fb958a8:1",
+    "right_record": "gis_sites:sha256:1075ae0c484a38742955:1",
+    "target": "same_real_world_entity",
+    "score": 0.216,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc101 vs dcc999",
+        "strength": 0.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "12 main street vs 12 main street unit b",
+        "strength": 0.8
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": false,
+        "result": "IDs: 'dcc101' versus 'dcc999'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": false,
+        "result": "distinct identifiers must not be auto-merged",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 0.8
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-cb553d1e24f51f77",
+    "kind": "record_match",
+    "source_id": "council_extract|gis_sites",
+    "source_field": null,
+    "left_record": "council_extract:sha256:89b51ff956b2c6d729a5:1",
+    "right_record": "gis_sites:sha256:ac9740108f421466f173:1",
+    "target": "same_real_world_entity",
+    "score": 0.251,
+    "disposition": "rejected",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc102 vs dcc101",
+        "strength": 0.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "14 main street vs 12 main street",
+        "strength": 0.929
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": false,
+        "result": "IDs: 'dcc102' versus 'dcc101'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": false,
+        "result": "distinct identifiers must not be auto-merged",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 0.929
+      }
+    ],
+    "model": "deterministic"
+  },
+  {
+    "schema_version": 1,
+    "hypothesis_id": "hyp-aaf9776a3dd5f9b0",
+    "kind": "record_match",
+    "source_id": "council_extract|gis_sites",
+    "source_field": null,
+    "left_record": "council_extract:sha256:89b51ff956b2c6d729a5:1",
+    "right_record": "gis_sites:sha256:eba0bed925d23857f5f4:1",
+    "target": "same_real_world_entity",
+    "score": 1.0,
+    "disposition": "accepted",
+    "evidence": [
+      {
+        "signal": "identifier_equal",
+        "detail": "dcc102 vs dcc102",
+        "strength": 1.0
+      },
+      {
+        "signal": "address_similarity",
+        "detail": "14 main street vs 14 main street",
+        "strength": 1.0
+      }
+    ],
+    "checks": [
+      {
+        "name": "id_agreement",
+        "passed": true,
+        "result": "IDs: 'dcc102' versus 'dcc102'",
+        "observed": null
+      },
+      {
+        "name": "no_id_conflict",
+        "passed": true,
+        "result": "no contradictory IDs",
+        "observed": null
+      },
+      {
+        "name": "address_similarity",
+        "passed": true,
+        "result": "normalized address similarity",
+        "observed": 1.0
+      }
+    ],
+    "model": "deterministic"
+  }
+]

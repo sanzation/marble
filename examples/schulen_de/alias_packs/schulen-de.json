@@ -1,0 +1,94 @@
+{
+  "pack_id": "schulen-de",
+  "pack_version": "0.1.0",
+  "status": "example-curated-by-hand",
+  "note": "Beispiel-Pack. Einträge gelten NUR in den genannten field_scope-Rollen und nur wenn das Pack aktiviert ist.",
+  "entries": [
+    {
+      "surface": "Gym.",
+      "canonical": "Gymnasium",
+      "field_scope": [
+        "school_name"
+      ],
+      "ambiguous": false
+    },
+    {
+      "surface": "GGS",
+      "canonical": "Gemeinschaftsgrundschule",
+      "field_scope": [
+        "school_name"
+      ],
+      "ambiguous": false
+    },
+    {
+      "surface": "KGS",
+      "field_scope": [
+        "school_name"
+      ],
+      "ambiguous": true,
+      "candidates": [
+        {
+          "canonical": "Katholische Grundschule",
+          "context_rule": {
+            "school_type_in": [
+              "Grundschule"
+            ]
+          }
+        },
+        {
+          "canonical": "Kooperative Gesamtschule",
+          "context_rule": {
+            "school_type_in": [
+              "Gesamtschule"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "surface": "GS",
+      "field_scope": [
+        "school_name",
+        "school_type"
+      ],
+      "ambiguous": true,
+      "candidates": [
+        {
+          "canonical": "Grundschule"
+        },
+        {
+          "canonical": "Gesamtschule"
+        }
+      ]
+    }
+  ],
+  "address_rules": [
+    {
+      "rule": "strasse_abbrev",
+      "pattern": "str.",
+      "canonical": "straße",
+      "field_scope": [
+        "street"
+      ]
+    },
+    {
+      "rule": "ss_eszett_variant",
+      "pattern": "strasse",
+      "canonical": "straße",
+      "field_scope": [
+        "street"
+      ]
+    }
+  ],
+  "category_equivalences": [
+    {
+      "group": "berufsbildende Schule",
+      "members": [
+        "Berufskolleg",
+        "Oberstufenzentrum"
+      ],
+      "strength": "approximate",
+      "note": "Landesrechtlich unterschiedliche Schulformen; keine Identität."
+    }
+  ]
+}

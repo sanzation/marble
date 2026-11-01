@@ -1,0 +1,158 @@
+[
+  {
+    "source_id": "dcc_register",
+    "record_key": "sha256:c31b558a1f4a425d7e3a:1",
+    "canonical_fields": {
+      "register_id": "DCC-101",
+      "address": "12 Main Street",
+      "local_authority": "Dublin City Council",
+      "status": "Active",
+      "recorded_date": "2024-06-10"
+    },
+    "unmapped_fields": {}
+  },
+  {
+    "source_id": "dcc_register",
+    "record_key": "sha256:252f28a25959bac3fe94:1",
+    "canonical_fields": {
+      "register_id": "DCC-102",
+      "address": "14 Main Street",
+      "local_authority": "Dublin City Council",
+      "status": "Active",
+      "recorded_date": "2023-04-11"
+    },
+    "unmapped_fields": {}
+  },
+  {
+    "source_id": "dcc_register",
+    "record_key": "sha256:c9835b6e606430c144ed:1",
+    "canonical_fields": {
+      "register_id": "DCC-999",
+      "address": "12 Main Street, Unit B",
+      "local_authority": "Dublin City Council",
+      "status": "Active",
+      "recorded_date": "2022-05-09"
+    },
+    "unmapped_fields": {}
+  },
+  {
+    "source_id": "dcc_register",
+    "record_key": "sha256:9a91aacfec447d4eb6b2:1",
+    "canonical_fields": {
+      "register_id": "DCC-103",
+      "address": "7 Bridge Road",
+      "local_authority": "Dublin City Council",
+      "status": "Removed",
+      "recorded_date": "2020-02-16"
+    },
+    "unmapped_fields": {}
+  },
+  {
+    "source_id": "council_extract",
+    "record_key": "sha256:554f883e2f1e3fb958a8:1",
+    "canonical_fields": {
+      "register_id": "DCC-101",
+      "local_authority": "Dublin City Council",
+      "status": "Active",
+      "recorded_date": "2024-06-10"
+    },
+    "unmapped_fields": {
+      "Location": "12 Main St."
+    }
+  },
+  {
+    "source_id": "council_extract",
+    "record_key": "sha256:89b51ff956b2c6d729a5:1",
+    "canonical_fields": {
+      "register_id": "DCC-102",
+      "local_authority": "Dublin City Council",
+      "status": "Active",
+      "recorded_date": "2023-04-11"
+    },
+    "unmapped_fields": {
+      "Location": "14 Main St."
+    }
+  },
+  {
+    "source_id": "council_extract",
+    "record_key": "sha256:c8ccae84343421ab5937:1",
+    "canonical_fields": {
+      "register_id": "DCC-103",
+      "local_authority": "Dublin City Council",
+      "status": "Removed",
+      "recorded_date": "2020-02-16"
+    },
+    "unmapped_fields": {
+      "Location": "7 Bridge Rd"
+    }
+  },
+  {
+    "source_id": "council_extract",
+    "record_key": "sha256:ffde6e0c9cdbef48cd9a:1",
+    "canonical_fields": {
+      "register_id": "DCC-104",
+      "local_authority": "Dublin City Council",
+      "status": "Active",
+      "recorded_date": "2025-01-14"
+    },
+    "unmapped_fields": {
+      "Location": "26 Mill Road"
+    }
+  },
+  {
+    "source_id": "gis_sites",
+    "record_key": "sha256:ac9740108f421466f173:1",
+    "canonical_fields": {
+      "address": "12 Main Street",
+      "latitude": "53.3412",
+      "longitude": "-6.2648"
+    },
+    "unmapped_fields": {
+      "Reference": "DCC-101",
+      "LA Code": "DCC",
+      "State": "Active"
+    }
+  },
+  {
+    "source_id": "gis_sites",
+    "record_key": "sha256:eba0bed925d23857f5f4:1",
+    "canonical_fields": {
+      "address": "14 Main Street",
+      "latitude": "53.3414",
+      "longitude": "-6.2647"
+    },
+    "unmapped_fields": {
+      "Reference": "DCC-102",
+      "LA Code": "DCC",
+      "State": "Active"
+    }
+  },
+  {
+    "source_id": "gis_sites",
+    "record_key": "sha256:1075ae0c484a38742955:1",
+    "canonical_fields": {
+      "address": "12 Main Street, Unit B",
+      "latitude": "53.34125",
+      "longitude": "-6.26479"
+    },
+    "unmapped_fields": {
+      "Reference": "DCC-999",
+      "LA Code": "DCC",
+      "State": "Active"
+    }
+  },
+  {
+    "source_id": "gis_sites",
+    "record_key": "sha256:a2a245edb32eeccff636:1",
+    "canonical_fields": {
+      "address": "9 Canal Road",
+      "latitude": "53.3422",
+      "longitude": "-6.2694"
+    },
+    "unmapped_fields": {
+      "Reference": "DCC-105",
+      "LA Code": "DCC",
+      "State": "Active"
+    }
+  }
+]

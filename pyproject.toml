@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "marble-core-prototype"
+version = "0.0.1"
+description = "Evidence-first CSV schema and entity-grain discovery prototype"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "Apache-2.0"}
+dependencies = ["pydantic>=2.6,<3", "duckdb>=1.1,<3"]
+
+[project.optional-dependencies]
+arrow = ["pyarrow>=17"]
+ml = ["rapidfuzz>=3"]
+dev = ["pytest>=8", "pytest-cov>=5", "pyright>=1.1"]
+
+[project.scripts]
+marble = "marble.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.pyright]
+include = ["src", "tests"]
+venvPath = "."
+venv = ".venv"

@@ -1,0 +1,13 @@
+pydantic<3,>=2.6
+duckdb<3,>=1.1
+
+[arrow]
+pyarrow>=17
+
+[dev]
+pytest>=8
+pytest-cov>=5
+pyright>=1.1
+
+[ml]
+rapidfuzz>=3

@@ -1,0 +1,86 @@
+{
+  "$defs": {
+    "ColumnProfile": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "nonempty": {
+          "title": "Nonempty",
+          "type": "integer"
+        },
+        "distinct_nonempty": {
+          "title": "Distinct Nonempty",
+          "type": "integer"
+        },
+        "completeness": {
+          "title": "Completeness",
+          "type": "number"
+        },
+        "uniqueness": {
+          "title": "Uniqueness",
+          "type": "number"
+        },
+        "sample_values": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Sample Values",
+          "type": "array"
+        },
+        "detected_pattern": {
+          "title": "Detected Pattern",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "nonempty",
+        "distinct_nonempty",
+        "completeness",
+        "uniqueness",
+        "sample_values",
+        "detected_pattern"
+      ],
+      "title": "ColumnProfile",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "uri": {
+      "title": "Uri",
+      "type": "string"
+    },
+    "record_count": {
+      "title": "Record Count",
+      "type": "integer"
+    },
+    "columns": {
+      "items": {
+        "$ref": "#/$defs/ColumnProfile"
+      },
+      "title": "Columns",
+      "type": "array"
+    }
+  },
+  "required": [
+    "source_id",
+    "uri",
+    "record_count",
+    "columns"
+  ],
+  "title": "SourceProfile",
+  "type": "object"
+}
