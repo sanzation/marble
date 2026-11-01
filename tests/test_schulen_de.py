@@ -197,3 +197,36 @@ def test_competing_packs_remain_review_and_config_changes_run_id(tmp_path):
     assert first.run_id != second.run_id
     choices = [p for p in second.normalization_proposals if p.operation == "alias_lookup" and p.raw_value == "Goethe-Gym."]
     assert len(choices) == 2 and all(p.disposition == "review" for p in choices)
+
+
+def test_json_schema_validation_and_export(school_report, tmp_path):
+    from jsonschema import Draft202012Validator
+    from marble.models import ValueNormalizationProposal
+    report = inspect_csvs(FILES, alias_packs=[PACK], output_dir=tmp_path)
+    for model in (InspectionReport, ValueNormalizationProposal):
+        schema = json.loads((ROOT / "docs" / "schemas" / f"{model.__name__}.schema.json").read_text(encoding="utf-8"))
+        assert schema == model.model_json_schema()
+        Draft202012Validator.check_schema(schema)
+    Draft202012Validator(InspectionReport.model_json_schema()).validate(report.model_dump(mode="json"))
+    validator = Draft202012Validator(ValueNormalizationProposal.model_json_schema())
+    for proposal in json.loads((tmp_path / "normalization_proposals.json").read_text(encoding="utf-8")):
+        validator.validate(proposal)
+
+
+def test_cli_inspect_explicit_alias_pack(tmp_path):
+    result = subprocess.run([sys.executable, "-m", "marble.cli", "inspect", *map(str, FILES),
+                             "--alias-pack", str(PACK), "--out", str(tmp_path), "--no-db"],
+                            capture_output=True, text=True, encoding="utf-8", cwd=ROOT,
+                            env={**os.environ, "PYTHONIOENCODING": "utf-8"})
+    assert result.returncode == 0, result.stderr
+    assert json.loads(result.stdout)["normalization_proposals"] > 0
+    report = InspectionReport.model_validate_json((tmp_path / "report.json").read_text(encoding="utf-8"))
+    assert any(p.operation == "alias_lookup" for p in report.normalization_proposals)
+
+
+def test_csv_doubled_quotes_beyond_sniffer_sample(tmp_path):
+    path = tmp_path / "late_quotes.csv"
+    ordinary = '"001234";"' + "Ordinary School " * 20 + '"\n'
+    path.write_text('Schulnummer;Schulname\n' + ordinary * 30 + '"001235";"Schule ""Am Park"""\n', encoding="utf-8")
+    batch = load_csv(path)
+    assert batch.records[-1].values["Schulname"] == 'Schule "Am Park"'

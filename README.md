@@ -1,4 +1,4 @@
-# Marble Core – v0.0.1 (experimental)
+# Marble Core – v0.0.2 (experimental)
 
 **Three CSVs in → explainable field and entity-grain hypotheses out.**
 
@@ -73,14 +73,15 @@ The core does not assume that similar addresses imply the same real-world object
 - `hypotheses.csv`: human-readable debugging table with IDs and dispositions
 - `recipe_draft.json`: proposed mappings and coarse source type, `resolution_policy = no_merges`
 - `canonical_preview.json`: unmerged source records with *accepted* field-name mappings, plus `unmapped_fields`
+- `normalization_proposals.json` / `.csv`: explained value-normalization candidates, never applied to source records or the preview
 - `marble.duckdb`: optional DuckDB snapshot with `source_records`, `source_profiles`, `hypotheses`, `recipe_drafts` and `run_reports`
 
 Schemas are in `docs/schemas/`. See [`docs/CONTRACTS.md`](docs/CONTRACTS.md).
 
 ## Deliberate limitations
 
-- **CSV only** for this prototype (CSV dialect auto-detection; UTF-8/UTF-8 BOM). JSON, HTML, GeoJSON and API adapters come later behind the same input contract.
-- **Known tiny ontology:** `register_id`, `address`, `local_authority`, `status`, `recorded_date`, `latitude`, `longitude`. Entity grains `site`, `event`, `organization`. This is an explicit test vocabulary, not general semantic understanding.
+- **CSV only** for this prototype (delimiter detection; UTF-8/UTF-8 BOM with strict cp1252 fallback). Encoding, delimiter and `sep=` preambles are recorded as evidence. JSON, HTML, GeoJSON and API adapters come later behind the same input contract.
+- **Known tiny ontology:** the original site vocabulary plus an explicit German school-header vocabulary. This is a curated test vocabulary, not general semantic understanding. Real NRW school-form codes are not automatically decoded.
 - **No real ML/LLM yet.** Rules and statistical overlap first; low-confidence hypotheses are left for review. The future ML fallback must compete against this baseline.
 - **No value transforms applied.** `canonical_preview` renames only confidently mapped fields; it retains all raw values. This prevents accidental loss during discovery.
 - **No historical incremental build.** The DuckDB adapter transactionally replaces its single inspection snapshot. Source row IDs are content-derived in the absence of primary keys; therefore a changed row's ID will change. User-specified stable primary keys belong in the next iteration.
@@ -103,4 +104,22 @@ Only after we trust the proposals should we add a recipe executor and a real ent
 
 `examples/three_csv/truth.json` records intentionally hand-labelled mapping and same-entity expectations for the **synthetic** example. `tests/test_labelled_baseline.py` checks candidate-pair precision/recall and known negative cases. A perfect score on this toy fixture is not evidence of general accuracy; the next step is genuinely heterogeneous, challenging datasets.
 
-**Validation status of this delivered archive:** the CSV discovery pipeline, JSON contracts, labelled fixture tests and CLI explain functionality were exercised. The optional DuckDB integration test is included but skipped in the offline build environment because DuckDB could not be installed there; it will run automatically after a normal `pip install -e '.[dev]'`.
+**Validation on 2026-11-01:** 46 tests passed, including DuckDB, CLI and JSON Schema validation; Pyright reported no errors. See [the school evaluation](docs/validation/schulen_de/RESULTS.md) for every N-ID and the real NRW comparison. This is fixture evidence, not a general accuracy claim.
+
+## German school normalization proposals
+
+The original fixtures remain unchanged. Activate the school alias pack explicitly:
+
+```powershell
+.\.venv\Scripts\python.exe -m marble.cli inspect examples/schulen_de/nrw_landesverzeichnis.csv examples/schulen_de/berlin_schulverzeichnis.csv examples/schulen_de/duesseldorf_excel_export.csv examples/schulen_de/nondomain_kgs.csv --alias-pack examples/schulen_de/alias_packs/schulen-de.json --out out/schulen_de --no-db
+.\.venv\Scripts\python.exe -m marble.cli explain out/schulen_de/report.json --kind normalization --field "Name der Schule"
+.\.venv\Scripts\python.exe scripts/benchmark_schulen.py
+```
+
+The API accepts `alias_packs=[path]` and `source_metadata` keyed by CSV filename
+stem. Without an active pack there are no alias/category-equivalence proposals.
+Ambiguous aliases need an exact context rule on the same raw row; unconfirmed
+entity matches never authorize a normalization. `accepted` means **heuristically
+accepted**, not **human confirmed**. Recipe candidates still require review;
+no transformation or merge is executed. Composite addresses, operator semantics
+and coordinate mappings stay `review`; there is no CRS transformation.

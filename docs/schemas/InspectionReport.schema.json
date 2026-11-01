@@ -1,5 +1,40 @@
 {
   "$defs": {
+    "CSVIngestion": {
+      "properties": {
+        "encoding": {
+          "title": "Encoding",
+          "type": "string"
+        },
+        "delimiter": {
+          "title": "Delimiter",
+          "type": "string"
+        },
+        "preamble_lines": {
+          "default": 0,
+          "title": "Preamble Lines",
+          "type": "integer"
+        },
+        "ignored_empty_header_columns": {
+          "default": 0,
+          "title": "Ignored Empty Header Columns",
+          "type": "integer"
+        },
+        "evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "encoding",
+        "delimiter"
+      ],
+      "title": "CSVIngestion",
+      "type": "object"
+    },
     "CanonicalPreview": {
       "properties": {
         "source_id": {
@@ -351,6 +386,13 @@
           "default": true,
           "title": "Requires Review",
           "type": "boolean"
+        },
+        "normalization_proposal_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Normalization Proposal Ids",
+          "type": "array"
         }
       },
       "required": [
@@ -364,6 +406,66 @@
     "SourceProfile": {
       "additionalProperties": false,
       "properties": {
+        "license": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "License"
+        },
+        "license_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "License Url"
+        },
+        "publisher": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Publisher"
+        },
+        "retrieved_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Retrieved At"
+        },
+        "declared_crs": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Declared Crs"
+        },
         "schema_version": {
           "const": 1,
           "default": 1,
@@ -388,6 +490,17 @@
           },
           "title": "Columns",
           "type": "array"
+        },
+        "ingestion": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CSVIngestion"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
         }
       },
       "required": [
@@ -397,6 +510,127 @@
         "columns"
       ],
       "title": "SourceProfile",
+      "type": "object"
+    },
+    "ValueNormalizationProposal": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "proposal_id": {
+          "title": "Proposal Id",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "source_field": {
+          "title": "Source Field",
+          "type": "string"
+        },
+        "canonical_field": {
+          "title": "Canonical Field",
+          "type": "string"
+        },
+        "record_key": {
+          "title": "Record Key",
+          "type": "string"
+        },
+        "row_number": {
+          "title": "Row Number",
+          "type": "integer"
+        },
+        "raw_value": {
+          "title": "Raw Value",
+          "type": "string"
+        },
+        "proposed_value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Proposed Value"
+        },
+        "operation": {
+          "enum": [
+            "trim",
+            "casefold",
+            "alias_lookup",
+            "category_equivalence",
+            "parse_date_de",
+            "parse_decimal_de"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "candidates": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Candidates",
+          "type": "array"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "checks": {
+          "items": {
+            "$ref": "#/$defs/Check"
+          },
+          "title": "Checks",
+          "type": "array"
+        },
+        "score": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Score",
+          "type": "number"
+        },
+        "disposition": {
+          "enum": [
+            "accepted",
+            "review",
+            "rejected"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "recipe_candidate": {
+          "additionalProperties": true,
+          "title": "Recipe Candidate",
+          "type": "object"
+        }
+      },
+      "required": [
+        "proposal_id",
+        "source_id",
+        "source_field",
+        "canonical_field",
+        "record_key",
+        "row_number",
+        "raw_value",
+        "proposed_value",
+        "operation",
+        "evidence",
+        "checks",
+        "score",
+        "disposition",
+        "recipe_candidate"
+      ],
+      "title": "ValueNormalizationProposal",
       "type": "object"
     }
   },
@@ -440,6 +674,13 @@
       "additionalProperties": true,
       "title": "Metrics",
       "type": "object"
+    },
+    "normalization_proposals": {
+      "items": {
+        "$ref": "#/$defs/ValueNormalizationProposal"
+      },
+      "title": "Normalization Proposals",
+      "type": "array"
     }
   },
   "required": [

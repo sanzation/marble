@@ -38,7 +38,9 @@ def load_csv(path: str | Path, source_id: str | None = None) -> SourceBatch:
         except csv.Error:
             dialect = csv.excel
         delimiter = declared_delimiter if preamble_lines and declared_delimiter is not None else dialect.delimiter
-        reader = csv.DictReader(fh, dialect=dialect, delimiter=delimiter)
+        # A sample without escaped quotes makes Sniffer infer doublequote=False.
+        # Later records still use standard CSV doubled-quote escaping.
+        reader = csv.DictReader(fh, dialect=dialect, delimiter=delimiter, doublequote=True)
         columns = list(reader.fieldnames or [])
         if not columns:
             raise ValueError(f"No CSV header: {path}")
@@ -72,5 +74,6 @@ def load_csv(path: str | Path, source_id: str | None = None) -> SourceBatch:
                              ignored_empty_header_columns=ignored_empty_header_columns,
                              evidence=[f"strict decoding: {encoding}",
                                        "delimiter declared by sep= preamble" if preamble_lines else "delimiter selected by CSV Sniffer or comma fallback",
+                                       "standard CSV doubled-quote escaping enabled",
                                        "UTF-8/cp1252 selection is a decoding heuristic, not an encoding declaration"])
     return SourceBatch(source_id=sid, uri=path.as_posix(), columns=columns, records=rows, ingestion=ingestion)

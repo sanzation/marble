@@ -1,0 +1,13 @@
+N-ID,operation,tier,expected,before,actual,matches_truth
+N01,trim,core,accepted,not_generated,accepted,True
+N02,casefold,core,accepted,not_generated,accepted,True
+N03,alias_lookup,core,accepted,not_generated,accepted,True
+N04,alias_lookup,core,accepted,not_generated,accepted,True
+N05,alias_lookup,core,accepted,not_generated,accepted,True
+N06,alias_lookup,core,accepted,not_generated,accepted,True
+N07,alias_lookup,core,accepted,not_generated,accepted,True
+N08,alias_lookup,core,review,not_generated,review,True
+N09,alias_lookup,core,review,not_generated,review,True
+N10,category_equivalence,core,review,not_generated,review,True
+N11,parse_date_de,stretch,accepted,not_generated,accepted,True
+N12,parse_decimal_de,stretch,accepted,not_generated,accepted,True

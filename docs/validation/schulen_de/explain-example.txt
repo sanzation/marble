@@ -1,0 +1,11 @@
+
+norm-13630f58201198e6affe  normalization: alias_lookup (school_name)
+  source=duesseldorf_excel_export row=7 field=Name der Schule
+  raw='KGS Sankt Martin' proposed=None candidates=['Katholische Grundschule Sankt Martin', 'Kooperative Gesamtschule Sankt Martin']
+  status=review score=0.500; accepted=heuristically accepted, not human confirmed
+  EVIDENCE active_alias_pack=1.000: schulen-de@0.1.0; explicitly activated, field-scoped
+  EVIDENCE alias_candidates=0.900: ["Katholische Grundschule Sankt Martin", "Kooperative Gesamtschule Sankt Martin"]
+  EVIDENCE original_source_cell=1.000: KGS Sankt Martin
+  PASS field_scope: Explicit scope: ['school_name']
+  FAIL ambiguity_resolved_by_raw_context: No unique explicit raw-row context; entity-match hypotheses are not used
+  PASS discovery_only: Heuristically accepted is not human confirmed; no value is written

@@ -1,5 +1,40 @@
 {
   "$defs": {
+    "CSVIngestion": {
+      "properties": {
+        "encoding": {
+          "title": "Encoding",
+          "type": "string"
+        },
+        "delimiter": {
+          "title": "Delimiter",
+          "type": "string"
+        },
+        "preamble_lines": {
+          "default": 0,
+          "title": "Preamble Lines",
+          "type": "integer"
+        },
+        "ignored_empty_header_columns": {
+          "default": 0,
+          "title": "Ignored Empty Header Columns",
+          "type": "integer"
+        },
+        "evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "encoding",
+        "delimiter"
+      ],
+      "title": "CSVIngestion",
+      "type": "object"
+    },
     "SourceRecord": {
       "properties": {
         "source_id": {
@@ -46,6 +81,66 @@
   },
   "additionalProperties": false,
   "properties": {
+    "license": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "License"
+    },
+    "license_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "License Url"
+    },
+    "publisher": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Publisher"
+    },
+    "retrieved_at": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Retrieved At"
+    },
+    "declared_crs": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Declared Crs"
+    },
     "schema_version": {
       "const": 1,
       "default": 1,
@@ -73,6 +168,17 @@
       },
       "title": "Records",
       "type": "array"
+    },
+    "ingestion": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CSVIngestion"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
     }
   },
   "required": [

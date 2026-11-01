@@ -1,0 +1,19 @@
+{
+  "publisher": "Ministerium für Schule und Bildung des Landes Nordrhein-Westfalen",
+  "source_url": "https://www.schulministerium.nrw.de/BiPo/OpenData/Schuldaten/schuldaten.csv",
+  "resolved_url": "https://apps.schulministerium.nrw.de/BiPo/OpenData/Schuldaten/schuldaten.csv",
+  "dataset_url": "https://data.gov.de/suche/daten/schulgrunddaten-nrw?ids=651a0ec7-0e61-4219-b4a7-ffcfbb7b15b0",
+  "license": "dl-de/by-2-0",
+  "license_url": "https://www.govdata.de/dl-de/by-2-0",
+  "retrieved_at": "2026-11-01T22:30:29.728696+00:00",
+  "http_last_modified": "Sun, 01 Nov 2026 05:05:14 GMT",
+  "sha256": "1024748eb953f056a4b127b3736d250e2e410ce10e7bb382a5632d6fb7d59863",
+  "bytes": 1789749,
+  "modifications": "none; downloaded bytes preserved",
+  "declared_crs": null,
+  "crs_column_counts": {
+    "EPSG:25832": 5405,
+    "null": 241
+  },
+  "note": "No dataset-wide CRS asserted: some rows contain the literal null. Catalogue description mentions Gauß-Krüger; actual cells declare EPSG:25832."
+}

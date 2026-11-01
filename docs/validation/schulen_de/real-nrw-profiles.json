@@ -1,0 +1,580 @@
+[
+  {
+    "license": "dl-de/by-2-0",
+    "license_url": "https://www.govdata.de/dl-de/by-2-0",
+    "publisher": "Ministerium für Schule und Bildung des Landes Nordrhein-Westfalen",
+    "retrieved_at": "2026-11-01T22:30:29.728696+00:00",
+    "declared_crs": null,
+    "schema_version": 1,
+    "source_id": "schuldaten",
+    "uri": "C:/Users/dbaeh/dev/marble-core/examples/schulen_de/real_nrw/schuldaten.csv",
+    "record_count": 5646,
+    "columns": [
+      {
+        "name": "Schulnummer",
+        "nonempty": 5646,
+        "distinct_nonempty": 5646,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "100000",
+          "100010",
+          "100011",
+          "100012",
+          "100014"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Schulform",
+        "nonempty": 5646,
+        "distinct_nonempty": 26,
+        "completeness": 1.0,
+        "uniqueness": 0.0046,
+        "sample_values": [
+          "25",
+          "20",
+          "15",
+          "02",
+          "17"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Schulbezeichnung_1",
+        "nonempty": 5646,
+        "distinct_nonempty": 4080,
+        "completeness": 1.0,
+        "uniqueness": 0.7226,
+        "sample_values": [
+          "Studienkolleg des Ökumenischen",
+          "Gymnasium Claudia Agrippina Privat",
+          "Städt. Gesamtschule",
+          "Städt. Gemeinschaftsgrundschule",
+          "Kolibri-Schule"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Schulbezeichnung_2",
+        "nonempty": 4857,
+        "distinct_nonempty": 2257,
+        "completeness": 0.8603,
+        "uniqueness": 0.4647,
+        "sample_values": [
+          "Studienwerks e.V. für ausländische",
+          "schule als priv.Ersatzsch. d. Sek.I u.II",
+          "Schule d. Sekundarstufe I u. II",
+          "Am Friedenspark",
+          "Städt. Gemeinschaftsgrundschule"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Schulbezeichnung_3",
+        "nonempty": 2565,
+        "distinct_nonempty": 1111,
+        "completeness": 0.4543,
+        "uniqueness": 0.4331,
+        "sample_values": [
+          "Studierende",
+          "d. CAPS Privatschu gGmbH",
+          "- Primarstufe -",
+          "schule,Staatl. genehm.priv. Ersatzschule",
+          "- Sekundarstufen I und II -"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Kurzbezeichnung",
+        "nonempty": 5646,
+        "distinct_nonempty": 5646,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "Bochum, WBK KOL Studienkolleg",
+          "Köln, Gym Gymnasium Claudia Agrippina",
+          "Haan, GE Walder Straße",
+          "Leverkusen, GG Am Friedenspark",
+          "Herne, GG Kolibri-Schule"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Bezirksregierung",
+        "nonempty": 5646,
+        "distinct_nonempty": 5,
+        "completeness": 1.0,
+        "uniqueness": 0.0009,
+        "sample_values": [
+          "9",
+          "3",
+          "1",
+          "5",
+          "7"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "PLZ",
+        "nonempty": 5646,
+        "distinct_nonempty": 862,
+        "completeness": 1.0,
+        "uniqueness": 0.1527,
+        "sample_values": [
+          "44799",
+          "50933",
+          "42781",
+          "51371",
+          "44625"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Ort",
+        "nonempty": 5646,
+        "distinct_nonempty": 397,
+        "completeness": 1.0,
+        "uniqueness": 0.0703,
+        "sample_values": [
+          "Bochum",
+          "Köln",
+          "Haan",
+          "Leverkusen",
+          "Herne"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Strasse",
+        "nonempty": 5646,
+        "distinct_nonempty": 5174,
+        "completeness": 1.0,
+        "uniqueness": 0.9164,
+        "sample_values": [
+          "Girondelle 80",
+          "Stolberger Str. 112",
+          "Walder Str. 15",
+          "Netzestr. 12",
+          "Jean-Vogel-Str. 36"
+        ],
+        "detected_pattern": "alphanumeric"
+      },
+      {
+        "name": "Telefonvorwahl",
+        "nonempty": 5638,
+        "distinct_nonempty": 499,
+        "completeness": 0.9986,
+        "uniqueness": 0.0885,
+        "sample_values": [
+          "0234",
+          "0221",
+          "02129",
+          "0214",
+          "02323"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Telefon",
+        "nonempty": 5638,
+        "distinct_nonempty": 5468,
+        "completeness": 0.9986,
+        "uniqueness": 0.9698,
+        "sample_values": [
+          "9388231",
+          "37996433",
+          "3754950",
+          "310830",
+          "163970"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Faxvorwahl",
+        "nonempty": 5227,
+        "distinct_nonempty": 483,
+        "completeness": 0.9258,
+        "uniqueness": 0.0924,
+        "sample_values": [
+          "0234",
+          "0221",
+          "02129",
+          "0214",
+          "02323"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Fax",
+        "nonempty": 5227,
+        "distinct_nonempty": 5107,
+        "completeness": 0.9258,
+        "uniqueness": 0.977,
+        "sample_values": [
+          "9388260",
+          "37990671",
+          "37545999",
+          "3108320",
+          "163981"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "E-Mail",
+        "nonempty": 5646,
+        "distinct_nonempty": 5646,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "100000@schule.nrw.de",
+          "100010@schule.nrw.de",
+          "100011@schule.nrw.de",
+          "100012@schule.nrw.de",
+          "100014@schule.nrw.de"
+        ],
+        "detected_pattern": "alphanumeric"
+      },
+      {
+        "name": "Homepage",
+        "nonempty": 5440,
+        "distinct_nonempty": 5398,
+        "completeness": 0.9635,
+        "uniqueness": 0.9923,
+        "sample_values": [
+          "https://www.studienkolleg-bochum.de",
+          "http://www.claudia-agrippina-privatschule.de",
+          "http://www.gesamtschule-haan.de",
+          "http://www.ggs-am-friedenspark.com",
+          "https://www.kolibri-schule-herne.de/"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Rechtsform",
+        "nonempty": 5646,
+        "distinct_nonempty": 2,
+        "completeness": 1.0,
+        "uniqueness": 0.0004,
+        "sample_values": [
+          "2",
+          "1"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Traegernummer",
+        "nonempty": 5646,
+        "distinct_nonempty": 767,
+        "completeness": 1.0,
+        "uniqueness": 0.1358,
+        "sample_values": [
+          "10100",
+          "83150",
+          "11435",
+          "10080",
+          "10327"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Gemeindeschluessel",
+        "nonempty": 5646,
+        "distinct_nonempty": 396,
+        "completeness": 1.0,
+        "uniqueness": 0.0701,
+        "sample_values": [
+          "05911000",
+          "05315000",
+          "05158008",
+          "05316000",
+          "05916000"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Schulbetriebsschluessel",
+        "nonempty": 5646,
+        "distinct_nonempty": 7,
+        "completeness": 1.0,
+        "uniqueness": 0.0012,
+        "sample_values": [
+          "6",
+          "1",
+          "3",
+          "2",
+          "0"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Schulbetriebsdatum",
+        "nonempty": 5646,
+        "distinct_nonempty": 145,
+        "completeness": 1.0,
+        "uniqueness": 0.0257,
+        "sample_values": [
+          "01.01.1974",
+          "01.08.2016",
+          "01.08.2017",
+          "01.08.1973",
+          "01.08.2018"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "EPSG",
+        "nonempty": 5646,
+        "distinct_nonempty": 2,
+        "completeness": 1.0,
+        "uniqueness": 0.0004,
+        "sample_values": [
+          "EPSG:25832",
+          "null"
+        ],
+        "detected_pattern": "alphanumeric"
+      },
+      {
+        "name": "UTMRechtswert",
+        "nonempty": 5646,
+        "distinct_nonempty": 5198,
+        "completeness": 1.0,
+        "uniqueness": 0.9207,
+        "sample_values": [
+          "378180",
+          "352258",
+          "361466",
+          "356570",
+          "376821"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "UTMHochwert",
+        "nonempty": 5646,
+        "distinct_nonempty": 5191,
+        "completeness": 1.0,
+        "uniqueness": 0.9194,
+        "sample_values": [
+          "5701853",
+          "5645500",
+          "5673192",
+          "5658484",
+          "5710073"
+        ],
+        "detected_pattern": "numeric"
+      }
+    ],
+    "ingestion": {
+      "encoding": "utf-8",
+      "delimiter": ";",
+      "preamble_lines": 1,
+      "ignored_empty_header_columns": 1,
+      "evidence": [
+        "strict decoding: utf-8",
+        "delimiter declared by sep= preamble",
+        "standard CSV doubled-quote escaping enabled",
+        "UTF-8/cp1252 selection is a decoding heuristic, not an encoding declaration"
+      ]
+    }
+  },
+  {
+    "license": null,
+    "license_url": null,
+    "publisher": null,
+    "retrieved_at": null,
+    "declared_crs": null,
+    "schema_version": 1,
+    "source_id": "nrw_landesverzeichnis",
+    "uri": "C:/Users/dbaeh/dev/marble-core/examples/schulen_de/nrw_landesverzeichnis.csv",
+    "record_count": 8,
+    "columns": [
+      {
+        "name": "Schulnummer",
+        "nonempty": 8,
+        "distinct_nonempty": 8,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "100001",
+          "100002",
+          "100003",
+          "100004",
+          "100005"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Schulform",
+        "nonempty": 8,
+        "distinct_nonempty": 7,
+        "completeness": 1.0,
+        "uniqueness": 0.875,
+        "sample_values": [
+          "Gymnasium",
+          "Gemeinschaftsgrundschule",
+          "Realschule",
+          "Gesamtschule",
+          "Grundschule"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Amtliche Schulbezeichnung",
+        "nonempty": 8,
+        "distinct_nonempty": 8,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "Goethe-Gymnasium",
+          "Gemeinschaftsgrundschule Am Rhein",
+          "Städtische Realschule Nord",
+          "Gesamtschule Bilk",
+          "Goethe-Grundschule"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Strasse",
+        "nonempty": 8,
+        "distinct_nonempty": 8,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "Schillerstraße",
+          "Rheinufer",
+          "Nordstraße",
+          "Bilker Weg",
+          "Goethestraße"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Hausnummer",
+        "nonempty": 8,
+        "distinct_nonempty": 8,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "12",
+          "5",
+          "44",
+          "23",
+          "3"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "PLZ",
+        "nonempty": 8,
+        "distinct_nonempty": 8,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "40210",
+          "40213",
+          "40477",
+          "40223",
+          "40237"
+        ],
+        "detected_pattern": "numeric"
+      },
+      {
+        "name": "Ort",
+        "nonempty": 8,
+        "distinct_nonempty": 2,
+        "completeness": 1.0,
+        "uniqueness": 0.25,
+        "sample_values": [
+          "Düsseldorf",
+          "Köln"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Telefon",
+        "nonempty": 8,
+        "distinct_nonempty": 8,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "0211 555-0101",
+          "0211 555-0102",
+          "0211 555-0103",
+          "0211 555-0104",
+          "0211 555-0105"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "E-Mail",
+        "nonempty": 8,
+        "distinct_nonempty": 8,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "sekretariat@goethe-gym.example",
+          "info@ggs-am-rhein.example",
+          "büro@rs-nord.example",
+          "info@gesamtschule-bilk.example",
+          "info@goethe-gs.example"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Rechtsform",
+        "nonempty": 8,
+        "distinct_nonempty": 2,
+        "completeness": 1.0,
+        "uniqueness": 0.25,
+        "sample_values": [
+          "öffentlich",
+          "privat"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Rechtswert",
+        "nonempty": 8,
+        "distinct_nonempty": 8,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "344812,30",
+          "344990,10",
+          "345620,75",
+          "344300,00",
+          "347010,20"
+        ],
+        "detected_pattern": "text"
+      },
+      {
+        "name": "Hochwert",
+        "nonempty": 8,
+        "distinct_nonempty": 8,
+        "completeness": 1.0,
+        "uniqueness": 1.0,
+        "sample_values": [
+          "5677120,55",
+          "5677301,20",
+          "5679010,40",
+          "5675800,90",
+          "5678250,10"
+        ],
+        "detected_pattern": "text"
+      }
+    ],
+    "ingestion": {
+      "encoding": "utf-8",
+      "delimiter": ";",
+      "preamble_lines": 0,
+      "ignored_empty_header_columns": 0,
+      "evidence": [
+        "strict decoding: utf-8",
+        "delimiter selected by CSV Sniffer or comma fallback",
+        "standard CSV doubled-quote escaping enabled",
+        "UTF-8/cp1252 selection is a decoding heuristic, not an encoding declaration"
+      ]
+    }
+  }
+]

@@ -1,0 +1,473 @@
+{
+  "fixture_only": true,
+  "run_id": "run-7edbd970ee957acc",
+  "metrics": {
+    "sources": 4,
+    "source_records": 26,
+    "hypotheses": 53,
+    "field_mappings_accepted": 15,
+    "field_mappings_review": 11,
+    "record_matches_accepted_as_hypotheses": 1,
+    "record_matches_rejected": 3,
+    "actual_entities_merged": 0,
+    "normalization_proposals": 38,
+    "normalizations_heuristically_accepted": 33,
+    "normalizations_review": 5,
+    "normalizations_rejected": 0,
+    "normalizations_applied": 0
+  },
+  "normalization": [
+    {
+      "id": "N01",
+      "operation": "trim",
+      "tier": "core",
+      "expected": "accepted",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "accepted"
+      ],
+      "matches_truth": true,
+      "expected_value": "Goethe-Gym.",
+      "actual_values": [
+        "Goethe-Gym."
+      ],
+      "expected_candidates": [],
+      "proposal_ids": [
+        "norm-021c99c7595da19aae97"
+      ]
+    },
+    {
+      "id": "N02",
+      "operation": "casefold",
+      "tier": "core",
+      "expected": "accepted",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "accepted"
+      ],
+      "matches_truth": true,
+      "expected_value": "Goethe-Gymnasium",
+      "actual_values": [
+        "Goethe-Gymnasium"
+      ],
+      "expected_candidates": [],
+      "proposal_ids": [
+        "norm-dfde7c7465e1b06ae82c"
+      ]
+    },
+    {
+      "id": "N03",
+      "operation": "alias_lookup",
+      "tier": "core",
+      "expected": "accepted",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "accepted"
+      ],
+      "matches_truth": true,
+      "expected_value": "Goethe-Gymnasium",
+      "actual_values": [
+        "Goethe-Gymnasium"
+      ],
+      "expected_candidates": [],
+      "proposal_ids": [
+        "norm-384bcd400937b37a76d6"
+      ]
+    },
+    {
+      "id": "N04",
+      "operation": "alias_lookup",
+      "tier": "core",
+      "expected": "accepted",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "accepted"
+      ],
+      "matches_truth": true,
+      "expected_value": "Gemeinschaftsgrundschule Am Rhein",
+      "actual_values": [
+        "Gemeinschaftsgrundschule Am Rhein"
+      ],
+      "expected_candidates": [],
+      "proposal_ids": [
+        "norm-f72a9c3cb7a6fd60ba92"
+      ]
+    },
+    {
+      "id": "N05",
+      "operation": "alias_lookup",
+      "tier": "core",
+      "expected": "accepted",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "accepted"
+      ],
+      "matches_truth": true,
+      "expected_value": "Schillerstraße",
+      "actual_values": [
+        "Schillerstraße"
+      ],
+      "expected_candidates": [],
+      "proposal_ids": [
+        "norm-c6c8233ebacb64b9f16c"
+      ]
+    },
+    {
+      "id": "N06",
+      "operation": "alias_lookup",
+      "tier": "core",
+      "expected": "accepted",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "accepted"
+      ],
+      "matches_truth": true,
+      "expected_value": "Nordstraße",
+      "actual_values": [
+        "Nordstraße"
+      ],
+      "expected_candidates": [],
+      "proposal_ids": [
+        "norm-de0dc1a00fdc080040e2"
+      ]
+    },
+    {
+      "id": "N07",
+      "operation": "alias_lookup",
+      "tier": "core",
+      "expected": "accepted",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "accepted"
+      ],
+      "matches_truth": true,
+      "expected_value": "Kooperative Gesamtschule Am Wald",
+      "actual_values": [
+        "Kooperative Gesamtschule Am Wald"
+      ],
+      "expected_candidates": [],
+      "proposal_ids": [
+        "norm-15126cbee372492cafa4"
+      ]
+    },
+    {
+      "id": "N08",
+      "operation": "alias_lookup",
+      "tier": "core",
+      "expected": "review",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "review"
+      ],
+      "matches_truth": true,
+      "expected_value": null,
+      "actual_values": [
+        null
+      ],
+      "expected_candidates": [
+        "Katholische Grundschule Sankt Martin",
+        "Kooperative Gesamtschule Sankt Martin"
+      ],
+      "proposal_ids": [
+        "norm-13630f58201198e6affe"
+      ]
+    },
+    {
+      "id": "N09",
+      "operation": "alias_lookup",
+      "tier": "core",
+      "expected": "review",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "review"
+      ],
+      "matches_truth": true,
+      "expected_value": null,
+      "actual_values": [
+        null
+      ],
+      "expected_candidates": [
+        "Grundschule",
+        "Gesamtschule"
+      ],
+      "proposal_ids": [
+        "norm-2d2e0aad71286055291b"
+      ]
+    },
+    {
+      "id": "N10",
+      "operation": "category_equivalence",
+      "tier": "core",
+      "expected": "review",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "review"
+      ],
+      "matches_truth": true,
+      "expected_value": "berufsbildende Schule",
+      "actual_values": [
+        "berufsbildende Schule"
+      ],
+      "expected_candidates": [],
+      "proposal_ids": [
+        "norm-a44ff398f47a6dff4fa6"
+      ]
+    },
+    {
+      "id": "N11",
+      "operation": "parse_date_de",
+      "tier": "stretch",
+      "expected": "accepted",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "accepted"
+      ],
+      "matches_truth": true,
+      "expected_value": "2023-10-15",
+      "actual_values": [
+        "2023-10-15"
+      ],
+      "expected_candidates": [],
+      "proposal_ids": [
+        "norm-9dd9f479bd7554070f3f",
+        "norm-1fb21cde9c4aa6de23ed",
+        "norm-dcd746efee7c5cedf2c9",
+        "norm-6d03999277e7a0fd0ade",
+        "norm-63812e997ada22b0c747",
+        "norm-38c7497b5442dfce3436",
+        "norm-dff966faf227c7266dd7",
+        "norm-e8ae1a6645e91806b8f7"
+      ]
+    },
+    {
+      "id": "N12",
+      "operation": "parse_decimal_de",
+      "tier": "stretch",
+      "expected": "accepted",
+      "before": "not_generated",
+      "before_reason": "v0.0.1 has no proposals/alias_packs API; original corpus also fails cp1252 decoding",
+      "actual": [
+        "accepted"
+      ],
+      "matches_truth": true,
+      "expected_value": "344812.30",
+      "actual_values": [
+        "344812.30"
+      ],
+      "expected_candidates": [],
+      "proposal_ids": [
+        "norm-a5010999d51f6e8d5fad"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "E01",
+      "a": [
+        "nrw",
+        1
+      ],
+      "b": [
+        "ddorf",
+        1
+      ],
+      "expected": "same entity; no disposition specified",
+      "actual": [
+        "accepted"
+      ]
+    },
+    {
+      "entity": "E01",
+      "a": [
+        "nrw",
+        1
+      ],
+      "b": [
+        "ddorf",
+        8
+      ],
+      "expected": "same entity; no disposition specified",
+      "actual": [
+        "review"
+      ]
+    },
+    {
+      "entity": "E01",
+      "a": [
+        "ddorf",
+        1
+      ],
+      "b": [
+        "ddorf",
+        8
+      ],
+      "expected": "same entity; no disposition specified",
+      "actual": [
+        "review"
+      ]
+    },
+    {
+      "entity": "E02",
+      "a": [
+        "nrw",
+        2
+      ],
+      "b": [
+        "ddorf",
+        2
+      ],
+      "expected": "same entity; no disposition specified",
+      "actual": [
+        "review"
+      ]
+    },
+    {
+      "entity": "E03",
+      "a": [
+        "nrw",
+        3
+      ],
+      "b": [
+        "ddorf",
+        3
+      ],
+      "expected": "same entity; no disposition specified",
+      "actual": [
+        "review"
+      ]
+    },
+    {
+      "entity": "E04",
+      "a": [
+        "nrw",
+        4
+      ],
+      "b": [
+        "ddorf",
+        4
+      ],
+      "expected": "review",
+      "actual": [
+        "review"
+      ]
+    },
+    {
+      "entity": "E08",
+      "a": [
+        "nrw",
+        8
+      ],
+      "b": [
+        "ddorf",
+        5
+      ],
+      "expected": "same entity; no disposition specified",
+      "actual": [
+        "review"
+      ]
+    }
+  ],
+  "must_not_merge": [
+    {
+      "a": [
+        "nrw",
+        1
+      ],
+      "b": [
+        "berlin",
+        1
+      ],
+      "reason": "gleicher Name, anderes Bundesland, andere PLZ/Ort",
+      "actual": [
+        "rejected"
+      ],
+      "has_accepted_match": false
+    },
+    {
+      "a": [
+        "nrw",
+        8
+      ],
+      "b": [
+        "berlin",
+        6
+      ],
+      "reason": "gleicher Name UND gleiche Straße+Nr, aber PLZ/Ort/Land widersprechen",
+      "actual": [
+        "rejected"
+      ],
+      "has_accepted_match": false
+    },
+    {
+      "a": [
+        "nrw",
+        1
+      ],
+      "b": [
+        "nrw",
+        5
+      ],
+      "reason": "Goethe-Gymnasium vs Goethe-Grundschule: ähnlicher Name, andere Schulform+Adresse",
+      "actual": [
+        "no_candidate"
+      ],
+      "has_accepted_match": false
+    },
+    {
+      "a": [
+        "nrw",
+        6
+      ],
+      "b": [
+        "berlin",
+        2
+      ],
+      "reason": "'Am Park' in beiden Namen, andere Schulform/Stadt",
+      "actual": [
+        "no_candidate"
+      ],
+      "has_accepted_match": false
+    },
+    {
+      "a": [
+        "ddorf",
+        6
+      ],
+      "b": [
+        "ddorf",
+        7
+      ],
+      "reason": "gleiche Abkürzung KGS, verschiedene Schulen",
+      "actual": [
+        "no_candidate"
+      ],
+      "has_accepted_match": false
+    }
+  ],
+  "labelled_positive_pairs": 7,
+  "positive_pairs_with_candidate": 7,
+  "accepted_matches": 1,
+  "accepted_matches_outside_labelled_entities": 0,
+  "raw_values_changed": 0,
+  "lost_columns": 0,
+  "deterministic_full_report": true,
+  "fixture_sha256": {
+    "examples\\schulen_de\\nrw_landesverzeichnis.csv": "b478b34d25e1616b0000c5fdfc1550195a9202813a5b9f3c1130d1fef70d1f17",
+    "examples\\schulen_de\\berlin_schulverzeichnis.csv": "e3ec0dbf86c199b17ac4ac4ca3a79417d4d7888fac641ec9b19e6ea2d2f23994",
+    "examples\\schulen_de\\duesseldorf_excel_export.csv": "53435e29899ebc43b848739fc5e787d94780cde3fdb92fcebdf0b9854df2ae25",
+    "examples\\schulen_de\\nondomain_kgs.csv": "c8d4894c7cbb74c280154e4473f42b128280391762b17bad7baa3507ff82d5a2",
+    "examples\\schulen_de\\truth.json": "ea0ede7747386f2e39b0969a76745f5fa7a426018ace99afde780fa6f952ae3a",
+    "examples\\schulen_de\\alias_packs\\schulen-de.json": "13c2c93b7c362b1c57cef50c4e25ae3170946976f341a51a923b917c3a1e5e21"
+  }
+}
