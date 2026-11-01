@@ -1,0 +1,208 @@
+{
+  "$defs": {
+    "AddressRule": {
+      "additionalProperties": false,
+      "properties": {
+        "rule": {
+          "title": "Rule",
+          "type": "string"
+        },
+        "pattern": {
+          "minLength": 1,
+          "title": "Pattern",
+          "type": "string"
+        },
+        "canonical": {
+          "title": "Canonical",
+          "type": "string"
+        },
+        "field_scope": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Field Scope",
+          "type": "array"
+        }
+      },
+      "required": [
+        "rule",
+        "pattern",
+        "canonical",
+        "field_scope"
+      ],
+      "title": "AddressRule",
+      "type": "object"
+    },
+    "AliasCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "canonical": {
+          "title": "Canonical",
+          "type": "string"
+        },
+        "context_rule": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ContextRule"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "canonical"
+      ],
+      "title": "AliasCandidate",
+      "type": "object"
+    },
+    "AliasEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "surface": {
+          "minLength": 1,
+          "title": "Surface",
+          "type": "string"
+        },
+        "field_scope": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Field Scope",
+          "type": "array"
+        },
+        "ambiguous": {
+          "title": "Ambiguous",
+          "type": "boolean"
+        },
+        "canonical": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Canonical"
+        },
+        "candidates": {
+          "items": {
+            "$ref": "#/$defs/AliasCandidate"
+          },
+          "title": "Candidates",
+          "type": "array"
+        }
+      },
+      "required": [
+        "surface",
+        "field_scope",
+        "ambiguous"
+      ],
+      "title": "AliasEntry",
+      "type": "object"
+    },
+    "CategoryEquivalence": {
+      "additionalProperties": false,
+      "properties": {
+        "group": {
+          "title": "Group",
+          "type": "string"
+        },
+        "members": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Members",
+          "type": "array"
+        },
+        "strength": {
+          "const": "approximate",
+          "title": "Strength",
+          "type": "string"
+        },
+        "note": {
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "group",
+        "members",
+        "strength",
+        "note"
+      ],
+      "title": "CategoryEquivalence",
+      "type": "object"
+    },
+    "ContextRule": {
+      "additionalProperties": false,
+      "properties": {
+        "school_type_in": {
+          "items": {
+            "type": "string"
+          },
+          "title": "School Type In",
+          "type": "array"
+        }
+      },
+      "required": [
+        "school_type_in"
+      ],
+      "title": "ContextRule",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "pack_id": {
+      "title": "Pack Id",
+      "type": "string"
+    },
+    "pack_version": {
+      "title": "Pack Version",
+      "type": "string"
+    },
+    "status": {
+      "title": "Status",
+      "type": "string"
+    },
+    "note": {
+      "title": "Note",
+      "type": "string"
+    },
+    "entries": {
+      "items": {
+        "$ref": "#/$defs/AliasEntry"
+      },
+      "title": "Entries",
+      "type": "array"
+    },
+    "address_rules": {
+      "items": {
+        "$ref": "#/$defs/AddressRule"
+      },
+      "title": "Address Rules",
+      "type": "array"
+    },
+    "category_equivalences": {
+      "items": {
+        "$ref": "#/$defs/CategoryEquivalence"
+      },
+      "title": "Category Equivalences",
+      "type": "array"
+    }
+  },
+  "required": [
+    "pack_id",
+    "pack_version",
+    "status",
+    "note",
+    "entries"
+  ],
+  "title": "AliasPack",
+  "type": "object"
+}

@@ -1,0 +1,183 @@
+{
+  "$defs": {
+    "Check": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "passed": {
+          "title": "Passed",
+          "type": "boolean"
+        },
+        "result": {
+          "title": "Result",
+          "type": "string"
+        },
+        "observed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Observed"
+        }
+      },
+      "required": [
+        "name",
+        "passed",
+        "result"
+      ],
+      "title": "Check",
+      "type": "object"
+    },
+    "Evidence": {
+      "properties": {
+        "signal": {
+          "title": "Signal",
+          "type": "string"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        },
+        "strength": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Strength",
+          "type": "number"
+        }
+      },
+      "required": [
+        "signal",
+        "detail",
+        "strength"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "proposal_id": {
+      "title": "Proposal Id",
+      "type": "string"
+    },
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "source_field": {
+      "title": "Source Field",
+      "type": "string"
+    },
+    "canonical_field": {
+      "title": "Canonical Field",
+      "type": "string"
+    },
+    "record_key": {
+      "title": "Record Key",
+      "type": "string"
+    },
+    "row_number": {
+      "title": "Row Number",
+      "type": "integer"
+    },
+    "raw_value": {
+      "title": "Raw Value",
+      "type": "string"
+    },
+    "proposed_value": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Proposed Value"
+    },
+    "operation": {
+      "enum": [
+        "trim",
+        "casefold",
+        "alias_lookup",
+        "category_equivalence",
+        "parse_date_de",
+        "parse_decimal_de"
+      ],
+      "title": "Operation",
+      "type": "string"
+    },
+    "candidates": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Candidates",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "checks": {
+      "items": {
+        "$ref": "#/$defs/Check"
+      },
+      "title": "Checks",
+      "type": "array"
+    },
+    "score": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Score",
+      "type": "number"
+    },
+    "disposition": {
+      "enum": [
+        "accepted",
+        "review",
+        "rejected"
+      ],
+      "title": "Disposition",
+      "type": "string"
+    },
+    "recipe_candidate": {
+      "additionalProperties": true,
+      "title": "Recipe Candidate",
+      "type": "object"
+    }
+  },
+  "required": [
+    "proposal_id",
+    "source_id",
+    "source_field",
+    "canonical_field",
+    "record_key",
+    "row_number",
+    "raw_value",
+    "proposed_value",
+    "operation",
+    "evidence",
+    "checks",
+    "score",
+    "disposition",
+    "recipe_candidate"
+  ],
+  "title": "ValueNormalizationProposal",
+  "type": "object"
+}
